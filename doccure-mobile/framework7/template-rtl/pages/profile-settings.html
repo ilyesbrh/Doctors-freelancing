@@ -1,0 +1,556 @@
+<div class="page" data-name="profile-settings">
+	<div class="navbar two-action no-hairline">
+        <div class="navbar-inner">
+            <div class="left">
+                <a href="#" class="link icon-only panel-open" data-panel="left">
+                	<i class="custom-hamburger">
+                		<span><b></b></span>
+                	</i>
+                </a>
+            </div>
+            <div class="sliding custom-title">Profile Settings</div>
+            <div class="right">
+                <a href="/notifications/" class="link icon-only"><i class="material-icons">notifications</i></a>
+                <a href="#" data-popover=".main-menu" class="link icon-only popover-open"><i class="material-icons">more_vert</i></a>
+            </div>
+        </div>
+    </div>
+    <div class="popover main-menu">
+        <div class="popover-angle"></div>
+        <div class="popover-inner">
+            <div class="list">
+                <ul>
+                    <li><a href="/doctor-profile/" class="list-button item-link popover-close">My Profile</a></li>
+                    <li><a href="/profile-settings/" class="list-button item-link popover-close">Settings</a></li>
+                    <li><a href="/login/" class="list-button item-link popover-close">Log Out</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+	<div class="page-content profile-settings">
+		<div class="block">
+
+			<!-- Profile settings -->
+			<div class="container">
+				<div class="toolbar tabbar tabbar-scrollable toolbar-bottom">
+			    	<div class="toolbar-inner">
+			      		<a href="#Basic-info" class="tab-link tab-link-active">Basic Info</a>
+			      		<a href="#About-me" class="tab-link">About Me</a>
+			      		<a href="#Clinic-info" class="tab-link">Clinic Info</a>
+			      		<a href="#Contact-details" class="tab-link">Contact Details</a>
+			      		<a href="#pricing-services" class="tab-link">Pricing & Services</a>
+			      		<a href="#education-experience" class="tab-link">Education & Experience</a>
+			      		<a href="#awards-memberships" class="tab-link">Awards & Memberships</a>
+			      		<a href="#registrations" class="tab-link">Registrations</a>
+			    	</div>
+			 	</div>
+
+			 	<div class="tabs-animated-wrap">
+				    <div class="tabs">
+
+					    <div id="Basic-info" class="page-content tab tab-active">
+					    	<div class="setting-widget">
+								<div class="list no-hairlines-md">
+									<div class="widget-title">
+										<h5>Basic Information</h5>
+									</div>
+									<div class="file-upload">
+										<a href="/doctor-profile/" class="file-upload-img">
+											<img src="assets/img/doctors/doctor-thumb-02.jpg" class="img-fluid img-circle" width="85" alt="User Image">
+											<span class="cam-icon"><img src="assets/img/placeholder-small.svg" alt=""></span>
+										</a>
+									</div>
+									<form>
+									  	<ul>
+										    <li class="item-content item-input">
+										      	<div class="item-inner">
+										        	<div class="item-title item-label">Username <span>*</span></div>
+										        	<div class="item-input-wrap">
+										          		<input type="text">
+										          		<span class="input-clear-button"></span>
+										        	</div>
+										      	</div>
+										    </li>
+										    <li class="item-content item-input">
+										      	<div class="item-inner">
+										        	<div class="item-title item-label">E-mail <span>*</span></div>
+										        	<div class="item-input-wrap">
+										          		<input type="email">
+										          		<span class="input-clear-button"></span>
+										        	</div>
+										      	</div>
+										    </li>
+										    <li class="item-content item-input">
+										      	<div class="item-inner">
+										        	<div class="item-title item-label">First Name <span>*</span></div>
+										        	<div class="item-input-wrap">
+										          		<input type="text">
+										          		<span class="input-clear-button"></span>
+										        	</div>
+										      	</div>
+										    </li>
+										    <li class="item-content item-input">
+										      	<div class="item-inner">
+										        	<div class="item-title item-label">Last Name <span>*</span></div>
+										        	<div class="item-input-wrap">
+										          		<input type="text">
+										          		<span class="input-clear-button"></span>
+										        	</div>
+										      	</div>
+										    </li>
+										    <li class="item-content item-input">
+										      	<div class="item-inner">
+										        	<div class="item-title item-label">Phone Number</div>
+										        	<div class="item-input-wrap">
+										          		<input type="tel">
+										          		<span class="input-clear-button"></span>
+										        	</div>
+										      	</div>
+										    </li>
+										    <li class="item-content item-input col-50 gender">
+										      	<div class="item-media">
+										        	<i class="icon demo-list-icon"></i>
+										      	</div>
+										      	<div class="item-inner">
+										        	<div class="item-title item-label">Gender</div>
+										        	<div class="item-input-wrap input-dropdown-wrap">
+										          		<select>
+										            		<option value="Male">Male</option>
+										            		<option value="Female">Female</option>
+										          		</select>
+										        	</div>
+										      	</div>
+										    </li>
+										    <li class="item-content item-input col-50 dob">
+										      	<div class="item-inner">
+										        	<div class="item-title item-label">From</div>
+										        	<div class="item-input-wrap date-picker-col">
+										          		<input type="text" readonly="readonly" id="first-calendar-modal"/>
+								            			<span class="calendar-icon"><img src="assets/img/icon-metro-calendar-big.svg" alt=""></span>
+										        	</div>
+										      	</div>
+										    </li>
+										    <li class="bottom-button">
+										    	<button class="btn">Next</button>
+										    </li>
+									  	</ul>
+								  	</form>
+								</div>
+						    </div>
+						</div>
+
+						<div id="About-me" class="page-content tab">
+							<div class="setting-widget">
+					      		<div class="widget-title">
+									<h5>About Me</h5>
+								</div>
+								<form>
+									<ul>
+										<li class="item-content item-input">
+									      	<div class="item-inner">
+									        	<div class="item-title item-label">Biography</div>
+									        	<div class="item-input-wrap">
+									          		<textarea placeholder="Within 400 characters"></textarea>
+									        	</div>
+									      	</div>
+									    </li>
+									    <li class="bottom-button">
+									    	<button class="btn">Next</button>
+									    </li>
+									</ul>
+								</form>
+					      	</div>
+						</div>
+
+						<div id="Clinic-info" class="page-content tab">
+					      	<div class="setting-widget">
+					      		<div class="widget-title">
+									<h5>Clinic Info</h5>
+								</div>
+								<form>
+									<ul>
+										<li class="item-content item-input">
+									      	<div class="item-inner">
+									        	<div class="item-title item-label">Clinic Name </div>
+									        	<div class="item-input-wrap">
+									          		<input type="text">
+									          		<span class="input-clear-button"></span>
+									        	</div>
+									      	</div>
+									    </li>
+									    <li class="item-content item-input">
+									      	<div class="item-inner">
+									        	<div class="item-title item-label">Clinic Address </div>
+									        	<div class="item-input-wrap">
+									          		<input type="text">
+									          		<span class="input-clear-button"></span>
+									        	</div>
+									      	</div>
+									    </li>
+									    <li class="item-content item-input">
+									      	<div class="item-inner">
+									        	<div class="item-title item-label">Clinic Images</div>
+									        	<div class="item-input-wrap">
+									        		<div class="file-upload-multiple">
+									          			<input type="file" id="choose" placeholder="Click here to upload images" multiple="multiple" />
+									          			<span class="placeholder-text">Click here to upload images</span>
+									          		</div>
+												    <div id="uploadPreview"></div>
+									        	</div>
+									      	</div>
+									    </li>
+									    <li class="bottom-button">
+									    	<button class="btn">Next</button>
+									    </li>
+									</ul>
+								</form>
+					      	</div>
+						</div>
+
+						<div id="Contact-details" class="page-content tab">
+					      	<div class="setting-widget">
+					      		<div class="widget-title">
+									<h5>Contact Details</h5>
+								</div>
+								<form>
+									<ul>
+										<li class="item-content item-input">
+									      	<div class="item-inner">
+									        	<div class="item-title item-label">Address Line 1</div>
+									        	<div class="item-input-wrap">
+									          		<input type="text">
+									          		<span class="input-clear-button"></span>
+									        	</div>
+									      	</div>
+									    </li>
+									    <li class="item-content item-input">
+									      	<div class="item-inner">
+									        	<div class="item-title item-label">Address Line 2</div>
+									        	<div class="item-input-wrap">
+									          		<input type="text">
+									          		<span class="input-clear-button"></span>
+									        	</div>
+									      	</div>
+									    </li>
+									    <li class="item-content item-input">
+									      	<div class="item-inner">
+									        	<div class="item-title item-label">City</div>
+									        	<div class="item-input-wrap">
+									          		<input type="text">
+									          		<span class="input-clear-button"></span>
+									        	</div>
+									      	</div>
+									    </li>
+									    <li class="item-content item-input">
+									      	<div class="item-inner">
+									        	<div class="item-title item-label">State / Province</div>
+									        	<div class="item-input-wrap">
+									          		<input type="text">
+									          		<span class="input-clear-button"></span>
+									        	</div>
+									      	</div>
+									    </li>
+									    <li class="item-content item-input">
+									      	<div class="item-inner">
+									        	<div class="item-title item-label">Country</div>
+									        	<div class="item-input-wrap">
+									          		<input type="text">
+									          		<span class="input-clear-button"></span>
+									        	</div>
+									      	</div>
+									    </li>
+									    <li class="item-content item-input">
+									      	<div class="item-inner">
+									        	<div class="item-title item-label">Postal Code</div>
+									        	<div class="item-input-wrap">
+									          		<input type="text">
+									          		<span class="input-clear-button"></span>
+									        	</div>
+									      	</div>
+									    </li>
+									    <li class="bottom-button">
+									    	<button class="btn">Next</button>
+									    </li>
+									</ul>
+								</form>
+					      	</div>
+						</div>
+
+						<div id="pricing-services" class="page-content tab">
+							<div class="setting-widget">
+					      		<div class="widget-title">
+									<h5>Pricing</h5>
+								</div>
+								<div class="pricing-col">
+									<div class="list">
+									  	<ul>
+										    <li>
+										      	<label class="item-radio item-radio-icon-end item-content">
+										        	<input type="radio" name="radio" value="Free" />
+										        	<i class="icon icon-radio"></i>
+										        	<div class="item-inner">
+										          		<div class="item-title">Free</div>
+										        	</div>
+										      	</label>
+										    </li>
+										    <li>
+										      	<label class="item-radio item-radio-icon-end item-content">
+										        	<input type="radio" name="radio" value="custom-price" />
+										        	<i class="icon icon-radio"></i>
+										        	<div class="item-inner">
+										          		<div class="item-title">Custom Price (per hour)</div>
+										        	</div>
+										      	</label>
+										    </li>
+										    <li class="item-content item-input">
+										      	<div class="item-inner">
+										        	<div class="item-input-wrap">
+										          		<input type="text">
+										          		<span class="input-clear-button"></span>
+										        	</div>
+										      	</div>
+										    </li>
+									  	</ul>
+									</div>
+								</div>
+								<div class="services-specialization">
+									<ul>
+										<li class="item-content item-input">
+									      	<div class="item-inner">
+									        	<div class="item-title item-label">Services</div>
+									        	<div class="item-input-wrap">
+									          		<form class="row" id="data">
+													    <input type="" class="form-control" id="Services">
+													    <button type="button" class="append-btn add-btn" data-trigger="focus"></button>
+													</form>
+													<ul id="profileCard" class="dis-none">
+													</ul>
+									        	</div>
+									      	</div>
+									    </li>
+									    <li class="item-content item-input">
+									      	<div class="item-inner">
+									        	<div class="item-title item-label">Specialization</div>
+									        	<div class="item-input-wrap">
+									          		<form class="row" id="data1">
+													    <input type="" class="form-control" id="Specialization">
+													    <button type="button" class="append-btn1 add-btn" data-trigger="focus"></button>
+													</form>
+													<ul id="profileCard1" class="dis-none">
+													</ul>
+									        	</div>
+									      	</div>
+									    </li>
+									</ul>
+								</div>
+								<ul>
+									<li class="bottom-button">
+								    	<button class="btn">Next</button>
+								    </li>
+								</ul>
+					      	</div>
+						</div>
+
+						<div id="education-experience" class="page-content tab">
+							<div class="setting-widget">
+					      		<div class="widget-title">
+									<h5>Education</h5>
+								</div>
+								<div class="education-experience">
+									<form class="append-col">
+										<ul class="education-details">
+											<li class="item-content item-input trash-icon-for-tab">
+												<span class="trash-icon"></span>
+											</li>
+										    <li class="item-content item-input col-50 gender">
+										      	<div class="item-inner">
+										        	<div class="item-title item-label">Degree</div>
+										        	<div class="item-input-wrap">
+										          		<input type="text">
+										        	</div>
+										      	</div>
+										    </li>
+										    <li class="item-content item-input col-50 dob">
+										      	<div class="item-inner">
+										        	<div class="item-title item-label">Year of Completion</div>
+										        	<div class="item-input-wrap">
+										          		<input type="text">
+										        	</div>
+										      	</div>
+										    </li>
+										    <li class="item-content item-input">
+										      	<div class="item-inner">
+										        	<div class="item-title item-label">College/Institute</div>
+										        	<div class="item-input-wrap">
+										          		<input type="text">
+										        	</div>
+										      	</div>
+										    </li>
+										</ul>
+									</form>
+									<span class="add-btn"></span>
+								</div>
+								<div class="work-experience">
+									<div class="widget-title">
+										<h5>Experience</h5>
+									</div>
+									<form class="append-col">
+										<ul class="work-experience-col">
+											<li class="item-content item-input trash-icon-for-tab">
+												<span class="trash-icon"></span>
+											</li>
+											<li class="item-content item-input">
+										      	<div class="item-inner">
+										        	<div class="item-title item-label">Hospital Name</div>
+										        	<div class="item-input-wrap">
+										          		<input type="text">
+										        	</div>
+										      	</div>
+										    </li>
+											<li class="item-content item-input col-50 gender">
+										      	<div class="item-inner">
+										        	<div class="item-title item-label">From</div>
+										        	<div class="item-input-wrap date-picker-col">
+										          		<input type="text" readonly="readonly" id="from-calendar-modal"/>
+								            			<span class="calendar-icon"><img src="assets/img/icon-metro-calendar-big.svg" alt=""></span>
+										        	</div>
+										      	</div>
+										    </li>
+										    <li class="item-content item-input col-50 dob">
+										      	<div class="item-inner">
+										        	<div class="item-title item-label">To</div>
+										        	<div class="item-input-wrap date-picker-col">
+										          		<input type="text" readonly="readonly" id="to-calendar-modal"/>
+								            			<span class="calendar-icon"><img src="assets/img/icon-metro-calendar-big.svg" alt=""></span>
+										        	</div>
+										      	</div>
+										    </li>
+										    <li class="item-content item-input">
+										      	<div class="item-inner">
+										        	<div class="item-title item-label">Hospital Name</div>
+										        	<div class="item-input-wrap">
+										          		<input type="text">
+										        	</div>
+										      	</div>
+										    </li>
+										</ul>
+									</form>
+									<span class="add-btn"></span>
+								</div>
+								<ul>
+									<li class="bottom-button">
+								    	<button class="btn">Next</button>
+								    </li>
+								</ul>
+					      	</div>
+						</div>
+
+						<div id="awards-memberships" class="page-content tab">
+							<div class="setting-widget">
+					      		<div class="widget-title">
+									<h5>Awards</h5>
+								</div>
+								<div class="awards-experience">
+									<form class="append-col">
+										<ul class="awards-details">
+											<li class="item-content item-input trash-icon-for-tab">
+												<span class="trash-icon"></span>
+											</li>
+											<li class="item-content item-input">
+										      	<div class="item-inner">
+										        	<div class="item-title item-label">Awards</div>
+										        	<div class="item-input-wrap">
+										          		<input type="text">
+										        	</div>
+										      	</div>
+										    </li>
+										    <li class="item-content item-input">
+										      	<div class="item-inner">
+										        	<div class="item-title item-label">Year</div>
+										        	<div class="item-input-wrap">
+										          		<input type="text">
+										        	</div>
+										      	</div>
+										    </li>
+										</ul>
+									</form>
+									<span class="add-btn"></span>
+								</div>
+								<div class="membership-experience">
+									<div class="widget-title">
+										<h5>Memberships</h5>
+									</div>
+									<form class="append-col">
+										<ul class="membership-details">
+											<li class="item-content item-input trash-icon-for-tab">
+												<span class="trash-icon"></span>
+											</li>
+										    <li class="item-content item-input">
+										      	<div class="item-inner">
+										        	<div class="item-title item-label">Memberships</div>
+										        	<div class="item-input-wrap">
+										          		<input type="text">
+										        	</div>
+										      	</div>
+										    </li>
+										</ul>
+									</form>
+									<span class="add-btn"></span>
+								</div>
+								<ul>
+									<li class="bottom-button">
+								    	<button class="btn">Next</button>
+								    </li>
+								</ul>
+					      	</div>
+						</div>
+
+						<div id="registrations" class="page-content tab">
+							<div class="setting-widget">
+					      		<div class="widget-title">
+									<h5>Registrations</h5>
+								</div>
+								<div class="registration-col">
+									<form class="append-col">
+										<ul class="registration-details">
+											<li class="item-content item-input trash-icon-for-tab">
+												<span class="trash-icon"></span>
+											</li>
+											<li class="item-content item-input">
+										      	<div class="item-inner">
+										        	<div class="item-title item-label">Registrations</div>
+										        	<div class="item-input-wrap">
+										          		<input type="text">
+										        	</div>
+										      	</div>
+										    </li>
+										    <li class="item-content item-input">
+										      	<div class="item-inner">
+										        	<div class="item-title item-label">Year</div>
+										        	<div class="item-input-wrap">
+										          		<input type="text">
+										        	</div>
+										      	</div>
+										    </li>
+										</ul>
+									</form>
+									<span class="add-btn"></span>
+								</div>
+								<ul>
+									<li class="bottom-button">
+								    	<button class="btn">Done</button>
+								    </li>
+								</ul>
+					      	</div>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+			<!-- Profile settings -->
+
+		</div>
+	</div>
+</div>
