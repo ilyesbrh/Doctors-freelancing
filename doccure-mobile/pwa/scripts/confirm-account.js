@@ -22,9 +22,11 @@ $('#confirm-btn').on('click', async function () {
 
     let response = await auth.confirmAccount(data);
 
+    console.log(response);
+
     if (response) {
 
-        window.location.href = 'template/login.html';
+        window.location.href = 'login.html';
     }
 
 });

@@ -1,7 +1,6 @@
 import authService from "../scripts/authServices.js";
 
 var auth = new authService();
-var phone;
 
 jQuery(document).ready(function () {
 
@@ -11,9 +10,8 @@ jQuery(document).ready(function () {
 $('#login-btn').on('click', async function () {
 
     let data = {
-        code: $('#phone').val(),
+        phone: $('#phone').val(),
         password: $('#password').val(),
-
     }
 
     console.log(data);
@@ -22,14 +20,12 @@ $('#login-btn').on('click', async function () {
 
     if (response) {
 
-        auth.saveJwt(response);
-
         let user = await auth.getUser();
 
         if (user.role === 'patient') {
-            window.location.href = 'template/search-doctor.html';
+            window.location.href = 'index.html';
         } else {
-            window.location.href = 'template/doctor-dashboard.html';
+            window.location.href = 'doctor-dashboard.html';
         }
     }
 

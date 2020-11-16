@@ -2,16 +2,21 @@ import authService from "../scripts/authServices.js";
 
 var auth = new authService();
 
+export default class restService {
 
-export default class authService {
+    constructor() { }
 
-    API_LINK = 'http://doccure-backend.herokuapp.com/api/v1/';
+    async getDoctorProfile() {
 
-    constructor() {
-        axios.defaults.baseURL = this.API_LINK;
-        axios.defaults.headers.common['Authorization'] = auth.loadJwt();
-        axios.defaults.headers.post['Content-Type'] = 'application/JSON';
+        let result = await axios.get('doctors/me');
+
+        return result;
     }
 
+    async updateProfile(me) {
+        let result = await axios.patch('doctors/me', me);
+
+        return result;
+    }
 
 }

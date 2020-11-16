@@ -4,8 +4,6 @@ var auth = new authService();
 
 jQuery(document).ready(function () {
 
-    auth.init();
-
 });
 
 $('#register-btn').on('click', async function () {
@@ -26,7 +24,7 @@ $('#register-btn').on('click', async function () {
         var params = new URLSearchParams();
         params.append("phone", data.phone);
 
-        window.location.href = 'template/confirm-account.html?' + params.toString();
+        window.location.href = 'confirm-account.html?' + params.toString();
     }
 
 });
