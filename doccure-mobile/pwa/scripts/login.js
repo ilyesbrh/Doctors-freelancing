@@ -22,7 +22,7 @@ $('#login-btn').on('click', async function () {
 
         let user = await auth.getUser();
 
-        if (user.role === 'patient') {
+        if (user.data.role === 'patient') {
             window.location.href = 'index.html';
         } else {
             window.location.href = 'doctor-dashboard.html';

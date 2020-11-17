@@ -34,7 +34,10 @@ export default class authService {
                     console.log(e);
                 }
                 return axios(originalRequest);
+            } else if (error.response.status === 401 && originalRequest._retry) {
+                location.href = 'login.html'
             }
+
             return Promise.reject(error);
         });
     }

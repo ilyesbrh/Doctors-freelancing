@@ -10,7 +10,7 @@ jQuery(document).ready(async () => {
 
     $('.name').text(me.name);
     $('#specialty').text(me.specialty);
-    $('#bio').val(me.bio);
+    $('#bio').text(me.bio);
     $('#location').text(me.state + ',' + me.country);
     me.educations.forEach(e => {
         $("#education-experience").append(getEducationHtml(e));
