@@ -18,15 +18,23 @@ export default class restService {
         return result;
     }
 
-    async getDoctorProfile() {
+    async getDoctorProfile(id) {
 
-        let result = await axios.get('doctors/me');
-
-        return result;
+        if (id) {
+            return await axios.get('doctors/' + id);
+        } else {
+            return await axios.get('doctors/me');
+        }
     }
 
     async updateProfile(me) {
         let result = await axios.patch('doctors/me', me);
+
+        return result;
+    }
+
+    async getDoctors(gender, specialty) {
+        let result = await axios.get(`doctors/?gender=${gender ? gender : ''}&specialty=${specialty ? specialty : ''}`);
 
         return result;
     }

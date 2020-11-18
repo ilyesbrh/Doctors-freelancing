@@ -198,15 +198,20 @@ function onClearList() {
 $('.save-btn').on('click', (e) => {
 
     /* getting services list */
+    save().then();
+    return false;
+});
+
+async function save() {
     let services = [];
     jQuery.each($('#profileCard>li>div'), function (key, value) {
         services.push(value.innerText);
-    })
+    });
     /* getting services list */
     let Specialization = [];
     jQuery.each($('#profileCard1>li>div'), function (key, value) {
         Specialization.push(value.innerText);
-    })
+    });
 
     /* getting education list */
     let educations = [];
@@ -219,7 +224,7 @@ $('.save-btn').on('click', (e) => {
         };
 
         educations.push(v);
-    })
+    });
     /* getting workExperience list */
     let workExperiences = [];
     jQuery.each($('.work-experience form .work-experience-col'), function (key, value) {
@@ -231,7 +236,7 @@ $('.save-btn').on('click', (e) => {
         };
 
         workExperiences.push(v);
-    })
+    });
 
     /* getting working hours list */
     let working_hours = [];
@@ -245,7 +250,10 @@ $('.save-btn').on('click', (e) => {
 
         working_hours.push(v);
 
-    })
+    });
+
+    debugger;
+    console.log($('#birthday').val());
 
     let me = {
         "name": $('#username').val(),
@@ -267,22 +275,36 @@ $('.save-btn').on('click', (e) => {
         "educations": [...educations],
         "experiences": [...workExperiences],
         "reviews": []
-    }
+    };
 
     debugger;
     try {
-        let result = api.updateProfile(me).then(v => {
+        let result = await api.updateProfile(me);
 
-            if (result) {
-                location.href = 'doctor-profile.html';
-            }
+        if (result) {
 
-        });
+            await swal({
+                title: "Updated successfully!",
+                text: "",
+                icon: "info",
+            });
+
+            location.href = 'doctor-profile.html';
+        } else {
+            await swal({
+                title: "Can't Log in!",
+                text: "Please verify your inputs!",
+                icon: "error",
+            });
+        }
 
     } catch (e) {
         console.log(e);
-
+        await swal({
+            title: "Can't Log in!",
+            text: "Please verify your inputs!",
+            icon: "error",
+        });
     }
-    return false;
-});
+}
 

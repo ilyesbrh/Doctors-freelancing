@@ -4,7 +4,6 @@ Author: Dreamguy's Technologies
 Version: 1.1
 */
 
-
 "use strict";
 
 // Register service worker.
@@ -61,7 +60,7 @@ if (jQuery('.search-tag .swiper-container').length > 0) {
 
 if ($('.datetimepicker').length > 0) {
   $('.datetimepicker').datetimepicker({
-    format: 'DD/MM/YYYY',
+    format: 'YYYY/MM/DD',
     icons: {
       up: "fas fa-chevron-up",
       down: "fas fa-chevron-down",
@@ -177,3 +176,4 @@ $('.awards-experience span.add-btn').on('click', function () {
 $('button').on('click', function () {
 
 });
+

@@ -16,17 +16,36 @@ $('#login-btn').on('click', async function () {
 
     console.log(data);
 
-    let response = await auth.login(data);
+    try {
 
-    if (response) {
+        let response = await auth.login(data);
 
-        let user = await auth.getUser();
+        if (response) {
 
-        if (user.data.role === 'patient') {
-            window.location.href = 'index.html';
-        } else {
-            window.location.href = 'doctor-dashboard.html';
+            let user = await auth.getUser();
+
+            await swal({
+                title: "Welcome!",
+                text: "You logged in successfully.",
+                icon: "success",
+            });
+
+            if (user.data.role === 'patient') {
+
+
+                window.location.href = 'index.html';
+            } else {
+
+                window.location.href = 'doctor-dashboard.html';
+            }
         }
+    } catch (error) {
+
+        swal({
+            title: "Can't Log in!",
+            text: "Please verify your inputs!",
+            icon: "error",
+        });
     }
 
 });

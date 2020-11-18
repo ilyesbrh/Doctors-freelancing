@@ -6,9 +6,17 @@ var api = new restApi();
 
 jQuery(document).ready(async () => {
 
-    let me = (await api.getDoctorProfile()).data;
+    let params = new URLSearchParams(window.location.search);
+    let id = params.get("id");
 
-    $('.name').text(me.name);
+    let me = (await api.getDoctorProfile(id)).data;
+
+    if (id) {
+        $('#bookAppointment').show();
+    }
+
+    debugger;
+    $('#name').text(me.name);
     $('#specialty').text(me.specialty);
     $('#bio').text(me.bio);
     $('#location').text(me.state + ',' + me.country);

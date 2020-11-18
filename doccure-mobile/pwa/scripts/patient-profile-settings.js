@@ -9,6 +9,8 @@ jQuery(document).ready(async () => {
 
     let me = (await api.getPatientProfile()).data;
 
+
+
     $('#username').val(me.name);
     $('#phone').val(me.phone);
     $('#gender').val(me.gender);
@@ -27,34 +29,52 @@ jQuery(document).ready(async () => {
 
 $('.save-btn').on('click', (e) => {
 
+    save().then();
+    return false;
+});
+
+async function save() {
+    let bd = moment($('#birthday').val()).format('YYYY-MM-DD');
+
     let me = {
         "name": $('#username').val(),
         "phone": $('#phone').val(),
         "gender": $('#gender').val(),
         "blood_group": $('#blood_group').val(),
         "bio": $('#bio').val(),
-        "birthday": $('#birthday').val(),
+        "birthday": bd,
         "address_line1": $('#address_line1').val(),
         "address_line2": $('#address_line2').val(),
         "state": $('#state').val(),
         "country": $('#country').val(),
         "postal_code": $('#postal_code').val()
-    }
+    };
 
-    debugger;
     try {
-        let result = api.updateProfilePatient(me).then(v => {
+        let result = await api.updateProfilePatient(me);
 
-            if (result) {
-                location.href = 'patient-profile.html';
-            }
-
-        });
+        if (result) {
+            await swal({
+                title: "Updated successfully!",
+                text: "",
+                icon: "info",
+            });
+            location.href = 'patient-profile.html';
+        } else {
+            await swal({
+                title: "Can't Log in!",
+                text: "Please verify your inputs!",
+                icon: "error",
+            });
+        }
 
     } catch (e) {
         console.log(e);
-
+        await swal({
+            title: "Can't Log in!",
+            text: "Please verify your inputs!",
+            icon: "error",
+        });
     }
-    return false;
-});
+}
 

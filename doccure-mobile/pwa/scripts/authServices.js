@@ -36,6 +36,10 @@ export default class authService {
                 return axios(originalRequest);
             } else if (error.response.status === 401 && originalRequest._retry) {
                 location.href = 'login.html'
+                localStorage.clear();
+            } else if (error.response.status === 403) {
+                location.href = 'login.html'
+                localStorage.clear();
             }
 
             return Promise.reject(error);

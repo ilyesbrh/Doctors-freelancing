@@ -10,7 +10,7 @@ jQuery(document).ready(async () => {
 
     console.log(me);
 
-    $('.name').text(me.name);
+    $('#name').text(me.name);
     $('#gender').text('Gender - ' + me.gender);
     $('#blood_group').text('Blood group: ' + me.blood_group.toUpperCase());
     $('#address_line1').text(me.address_line1);
