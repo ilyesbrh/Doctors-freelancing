@@ -2,7 +2,9 @@
 let appId, channelId, channelName;
 
 let getVideoCredentials = function (err) {
-    // get credentials here
+    appId = "2e0dc5c62ed046e89c1133c91f36a8ca";
+    channelId = "0062e0dc5c62ed046e89c1133c91f36a8caIADt6EN8v/b1/wZLH04PAlJitqNbphhOHBK+KM/QXcFOzUUIERoAAAAAIgByBAQC8M+2XwQAAQCAjLVfAgCAjLVfAwCAjLVfBACAjLVf";
+    channelName = "room181b8039d4404cb19ede1877bdfd06d1";
 };
 
 // Handle errors.
@@ -75,6 +77,14 @@ rtc.client.on("peer-leave", function (evt) {
     $("#remote_video_panel").remove()
 });
 
+rtc.client.on("onTokenPrivilegeWillExpire", function(){
+    // 30 seconds to expiry
+})
+
+rtc.client.on("onTokenPrivilegeDidExpire", function(){
+    // finish
+})
+
 $("#audio-button").on("click", function (e) {
     e.preventDefault()
     if (rtc.audioEnabled) {
@@ -97,3 +107,12 @@ $("#video-button").on("click", function (e) {
         rtc.localStream.unmuteVideo()
     }
 });
+
+setInterval(() => {
+    rtc.client.getSessionStats((stats) => {
+        let duration = parseInt(stats.Duration)
+        let s = ("0" + duration % 60).slice(-2);
+        let m = ("0" + parseInt(duration / 60)).slice(-2);
+      $("#call-duration").text(m + " : " + s)
+    });
+  }, 1000)
