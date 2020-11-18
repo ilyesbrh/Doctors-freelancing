@@ -41,6 +41,26 @@
       <!-- Main CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <style>
+        .my-video {
+            left: 80%;
+        }
+
+        #my-video {
+            width: 100px;
+            height: 100px;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+        }
+
+        .user-video div {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
     <div class="main-wrapper">
@@ -62,22 +82,21 @@
 										</a>
                                     </div>
                                 </div>
-                                <div class="user-video">
-                                    <img alt="" src="assets/images/video-call.png">
+                                <div id="user-video" class="user-video">
+                                    
                                 </div>
                                 <div class="my-video">
                                     <ul>
-                                        <li>
-                                            <img alt="" class="img-fluid" src="assets/images/patients/patient4.jpg">
+                                        <li id="my-video">
                                         </li>
                                     </ul>
                                     <div class="call-userinfo">
-                                        <span class="call-duration">04:15 Hrs</span>
+                                        <!-- <span class="call-duration">04:15 Hrs</span> -->
                                     </div>
                                 </div>
                                 <div class="call-icons video-call">
                                     <ul class="call-items">
-                                        <li class="call-item">
+                                        <li id="audio-button" class="call-item">
                                             <a href="">
                                                 <i><img src="assets/images/mute.svg" alt=""></i>
                                             </a>
@@ -87,7 +106,7 @@
                                                 <i><img src="assets/images/call-close.svg" alt=""></i>
                                             </a>
                                         </li>
-                                        <li class="call-item">
+                                        <li id="video-button" class="call-item">
                                             <a href="">
                                                 <i><img src="assets/images/video-call.svg" alt=""></i>
                                             </a>
@@ -120,6 +139,8 @@
     <!-- Custom JS -->
     <script src="assets/js/script.js"></script>
     
+    <script src="../scripts/AgoraRTCSDK-3.2.3.js"></script>
+    <script type="module" src="../scripts/agora.js"></script>
 </body>
 
 </html>
