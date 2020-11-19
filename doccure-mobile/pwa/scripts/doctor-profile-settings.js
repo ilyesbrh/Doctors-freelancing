@@ -6,6 +6,7 @@ var api = new restApi();
 
 jQuery(document).ready(async () => {
 
+    $('.container').append('<div id="loader"><div/>')
 
     let me = (await api.getDoctorProfile()).data;
 
@@ -45,6 +46,9 @@ jQuery(document).ready(async () => {
 
     onClearList();
     onClearForm();
+
+    $("#loader").remove()
+    $('.tab-content').removeClass('hidden')
 
 });
 
@@ -97,7 +101,7 @@ function getExperienceHtml(e) {
                 <div class="item-col">
                     <div class="item-title item-label">From</div>
                     <div class="item-input-wrap date-picker-col">
-                        <input type="text" name="date" value="${e.from_day}" data-select="datepicker" autocomplete="off">
+                        <input type="text" name="date" id="date" value="${e.from_day}" data-select="datepicker" autocomplete="off">
                         <span class="calendar-icon"><img src="assets/images/icon-metro-calendar-big.svg" alt=""></span>
                     </div>
                 </div>
@@ -106,7 +110,7 @@ function getExperienceHtml(e) {
                 <div class="item-col">
                     <div class="item-title item-label">To</div>
                     <div class="item-input-wrap date-picker-col">
-                        <input type="text" name="date"  value="${e.to_day}" data-select="datepicker" autocomplete="off">
+                        <input type="text" id="date" name="date"  value="${e.to_day}" data-select="datepicker" autocomplete="off">
                         <span class="calendar-icon"><img src="assets/images/icon-metro-calendar-big.svg" alt=""></span>
                     </div>
                 </div>
@@ -184,7 +188,7 @@ $('.work-experience span.add-btn').on('click', function () {
 //Click trash remove div
 function onClearForm() {
     $('ul li span.trash-icon').on('click', function () {
-        $(this).parent().parent().hide();
+        $(this).parent().parent().remove();
     });
 }
 
@@ -252,8 +256,7 @@ async function save() {
 
     });
 
-    debugger;
-    console.log($('#birthday').val());
+    let pricing = $('#pricing').val() == '' ? null : $('#pricing').val()
 
     let me = {
         "name": $('#username').val(),
@@ -267,7 +270,7 @@ async function save() {
         "state": $('#state').val(),
         "country": $('#country').val(),
         "postal_code": $('#postal_code').val(),
-        "pricing": $('#pricing').val(),
+        "pricing": pricing,
         "pricing_type": $('#pricing_type').val(),
         "services": [...services],
         "specialization": [...Specialization],
@@ -277,7 +280,6 @@ async function save() {
         "reviews": []
     };
 
-    debugger;
     try {
         let result = await api.updateProfile(me);
 
