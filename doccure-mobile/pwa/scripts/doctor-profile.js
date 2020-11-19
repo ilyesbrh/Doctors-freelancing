@@ -9,17 +9,19 @@ jQuery(document).ready(async () => {
     let params = new URLSearchParams(window.location.search);
     let id = params.get("id");
 
+    $('.doctor-profile-tab').append('<div id="loader"><div/>')
+
     let me = (await api.getDoctorProfile(id)).data;
 
     if (id) {
         $('#bookAppointment').show();
     }
 
-    debugger;
     $('#name').text(me.name);
     $('#specialty').text(me.specialty);
     $('#bio').text(me.bio);
-    $('#location').text(me.state + ',' + me.country);
+    $('#location').append('<i class="fas fa-map-marker-alt"></i> ' + me.state + ', ' + me.country);
+    
     me.educations.forEach(e => {
         $("#education-experience").append(getEducationHtml(e));
     });
@@ -38,7 +40,6 @@ jQuery(document).ready(async () => {
     $('#address_line1').text('Address: ' + me.address_line1);
     $('#address_line2').text('Second address: ' + me.address_line2);
 
-
     $('#today').text(moment().format('DD MMM YYYY'))
     me.working_hours.forEach(e => {
         $(".listing-hours").append(getHoursHtml(e));
@@ -49,21 +50,20 @@ jQuery(document).ready(async () => {
 
     });
 
-    $('#country').val(me.country);
+    me.reviews.forEach(e => {
+        $(".comments-list").append(getReviewHtml(e));
+    });
 
+    $('#country').val(me.country);
     $('#birthday').val(me.birthday);
     $('#phone').val(me.phone);
     $('#gender').val(me.gender);
-
-
     $('#postal_code').val(me.postal_code);
-
     $('#pricing_type').val(me.pricing_type);
     $('#pricing').val(me.pricing);
 
-
-
-
+    $("#loader").remove()
+    $('.tab-content').removeClass('hidden')
 });
 
 function getHoursHtml(e) {
@@ -91,5 +91,25 @@ function getEducationHtml(e) {
             ${e.degree}</h5>
         <span class="sub-title">${e.institute}</span>
         <span class="sub-title">${e.year_of_completion}</span>
+    `;
+}
+function getReviewHtml(e) {
+    return `
+    <li>
+    <div class="comment">
+        <img class="avatar avatar-sm rounded-circle" alt="User Image"
+            src="assets/images/patients/patient2.jpg">
+        <div class="comment-body">
+            <div class="meta-data">
+                <span class="comment-author">${e.patient_name}</span>
+                <div class="review-count rating">
+                <p style="margin-left: 5px; margin-bottom: -5px;"> ${e.stars} <i class="fas fa-star filled"></i> </p>
+                </div>
+            </div>
+            <p class="comment-content">${e.comment}
+            </p>
+        </div>
+    </div>
+</li>
     `;
 }
