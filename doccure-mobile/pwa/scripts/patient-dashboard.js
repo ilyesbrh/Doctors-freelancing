@@ -30,23 +30,17 @@ function getDoctorWidgetHTML(e) {
                 </a>
             </div>
             <div class="doc-info-cont">
-                <style>
-                .doc-gender{
-                    position: absolute;
-                    right: 14px;
-                    top: 14px;
-                    font-size: 20px;
-                    font-weight:600;
-                }
-                </style>
                 <h4 class="doc-name"><a href="doctor-profile.html?id=${e.id}">${e.name}</a></h4>
-                <p class="doc-speciality">${e.state + ', ' + e.country}</p>
-                <span class="doc-gender">${e.gender.toUpperCase()}</span>
-                <h5 class="doc-department">
-                    <span class="speciality-img"><img
-                            src="assets/images/specialities/specialities-01.png"
-                            class="img-fluid" alt="Speciality"></span> ${e.specialty}
-                </h5>
+                <p class="doc-speciality">${e.specialty.charAt(0).toUpperCase() + e.specialty.slice(1)}</p>
+                <br>
+                <div class="doc-info">
+					<div class="rating">
+					    <span class="d-inline-block average-rating">${e.gender.charAt(0).toUpperCase() + e.gender.slice(1)}</span>
+					</div>
+				    <div class="doc-location">
+					    <p><i class="fas fa-map-marker-alt"></i> ${e.state + ', ' + e.country}</p>
+					</div>
+				</div>
             </div>
         </div>
         <div class="doc-info-right">
