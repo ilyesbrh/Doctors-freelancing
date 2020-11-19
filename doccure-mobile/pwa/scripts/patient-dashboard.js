@@ -6,13 +6,10 @@ var api = new restApi();
 
 jQuery(document).ready(async () => {
 
-    let params = new URLSearchParams(window.location.search);
-    let gender = params.get("gender");
-    let specialty = params.get("specialty");
-
-    let doctors = await api.getDoctors(gender, specialty);
-
+    $(".doctors-list").append('<div id="loader"><div/>')
+    let doctors = await api.getDoctors('', '');
     console.log(doctors.data);
+    $("#loader").remove()
 
     doctors.data.forEach((e, i) => {
 
@@ -61,3 +58,22 @@ function getDoctorWidgetHTML(e) {
         </div>
     </div>`
 }
+
+$('#search').on("click", async function (e) {
+    e.preventDefault()
+
+    let gender = $('#gender').val();
+    let specialty = $('#specialty').val();
+
+    $(".doctors-list").empty()
+    $(".doctors-list").append('<div id="loader"><div/>')
+    let doctors = await api.getDoctors(gender, specialty);
+    console.log(doctors.data);
+    $("#loader").remove()
+
+    doctors.data.forEach((e, i) => {
+
+        $(".doctors-list").append(getDoctorWidgetHTML(e))
+
+    });
+});
