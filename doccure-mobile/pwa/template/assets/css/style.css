@@ -6058,3 +6058,28 @@ ul li span.trash-icon {
 	text-decoration: none;
 	cursor: pointer;
   }
+
+@media only screen and (min-width: 800px) {
+
+	.main-wrapper {
+		max-width: 800px;
+		margin: auto;
+	}
+	
+	.home, .page-content {
+		max-width: 800px;
+		margin: auto;
+		background-color: #f6f6f6;
+		height: 100%;
+	}
+	
+	body {
+		background-color: #fafafa;
+		height: 100%;
+	}
+
+	.modal-content {
+		margin: 15% auto;
+		max-width: 400px; 
+	}
+}
