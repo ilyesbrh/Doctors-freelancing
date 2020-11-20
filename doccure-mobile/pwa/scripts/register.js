@@ -7,6 +7,8 @@ jQuery(document).ready(function () {
 });
 
 $('#register-btn').on('click', async function () {
+    $("#register-btn").text("Loading...");
+    $("#register-btn").prop('disabled', true);
 
     let data = {
         name: $('#name').val(),
@@ -27,4 +29,6 @@ $('#register-btn').on('click', async function () {
         window.location.href = 'confirm-account.html?' + params.toString();
     }
 
+    $("#register-btn").text("Register");
+    $("#register-btn").prop('disabled', false);
 });

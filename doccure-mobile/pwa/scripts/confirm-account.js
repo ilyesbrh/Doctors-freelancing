@@ -12,6 +12,8 @@ jQuery(document).ready(function () {
 });
 
 $('#confirm-btn').on('click', async function () {
+    $("#confirm-btn").text("Loading...");
+    $("#confirm-btn").prop('disabled', true);
 
     let data = {
         code: $('#code').val(),
@@ -29,4 +31,8 @@ $('#confirm-btn').on('click', async function () {
         window.location.href = 'login.html';
     }
 
+    $("#confirm-btn").text("Confirm account");
+    $("#confirm-btn").prop('disabled', false);
+
+    
 });

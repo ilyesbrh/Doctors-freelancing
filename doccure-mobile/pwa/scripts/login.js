@@ -8,6 +8,8 @@ jQuery(document).ready(function () {
 });
 
 $('#login-btn').on('click', async function () {
+    $("#login-btn").text("Loading...");
+    $("#login-btn").prop('disabled', true);
 
     let data = {
         phone: $('#phone').val(),
@@ -47,5 +49,8 @@ $('#login-btn').on('click', async function () {
             icon: "error",
         });
     }
+
+    $("#login-btn").text("Login Now");
+    $("#login-btn").prop('disabled', false);
 
 });

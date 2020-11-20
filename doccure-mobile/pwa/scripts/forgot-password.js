@@ -7,6 +7,8 @@ jQuery(document).ready(function () {
 });
 
 $('#forgot-btn').on('click', async function () {
+    $("#forgot-btn").text("Loading...");
+    $("#forgot-btn").prop('disabled', true);
 
     let data = {
         phone: $('#phone').val(),
@@ -22,9 +24,14 @@ $('#forgot-btn').on('click', async function () {
         $('#forgot-btn').prop('disabled', true);
     }
 
+    $("#forgot-btn").text("Send code");
+    $("#forgot-btn").prop('disabled', false);
+
 });
 
 $('#confirm-btn').on('click', async function () {
+    $("#confirm-btn").text("Loading...");
+    $("#confirm-btn").prop('disabled', true);
 
     let data = {
         phone: $('#phone').val(),
@@ -42,5 +49,8 @@ $('#confirm-btn').on('click', async function () {
 
         window.location.href = 'login.html';
     }
+
+    $("#confirm-btn").text("Reset Password");
+    $("#confirm-btn").prop('disabled', false);
 
 });

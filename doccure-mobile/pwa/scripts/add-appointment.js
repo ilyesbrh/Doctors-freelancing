@@ -36,6 +36,9 @@ $('#login-btn').on('click', function () {
 
 });
 async function bookAppointment() {
+    $("#login-btn").text("Loading...");
+    $("#login-btn").prop('disabled', true);
+    
     let data = {
         doctor: id,
         from_time: $('#date').val(),
@@ -65,4 +68,7 @@ async function bookAppointment() {
             icon: "error",
         });
     }
+
+    $("#login-btn").text("Book Now");
+    $("#login-btn").prop('disabled', false);
 }
