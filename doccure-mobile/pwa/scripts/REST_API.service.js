@@ -18,6 +18,12 @@ export default class restService {
 
         return result;
     }
+    async getPatientAppointments() {
+
+        let result = await axios.get('patient/me/appointments/');
+
+        return result;
+    }
     async updateProfilePatient(me) {
         let result = await axios.patch('patients/me', me);
 
@@ -31,6 +37,13 @@ export default class restService {
         } else {
             return await axios.get('doctors/me');
         }
+    }
+
+    async getDoctorAppointments() {
+
+        let result = await axios.get('doctors/me/appointments/');
+
+        return result;
     }
 
     async updateProfile(me) {

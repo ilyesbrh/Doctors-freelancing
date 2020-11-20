@@ -32,15 +32,15 @@ jQuery(document).ready(async () => {
         $(".patient-appointments-col.medical_records").append(getMedicalRecordsHTML(e, i))
     });
 
-    $(".prescription-btn").on("click", function() {
+    $(".prescription-btn").on("click", function () {
         $("#prescription-modal" + $(this).attr('id')).css("display", "block");
     })
 
-    $(".close").on("click", function() {
+    $(".close").on("click", function () {
         $(".modal").css("display", "none");
     })
 
-    $(".medical-record-btn").on("click", function() {
+    $(".medical-record-btn").on("click", function () {
         $("#medical-record-modal" + $(this).attr('id')).css("display", "block");
     })
 
