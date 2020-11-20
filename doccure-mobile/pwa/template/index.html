@@ -2,224 +2,80 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport"
-		content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, minimal-ui, viewport-fit=cover">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="#3a57c4">
-	<title>Doccure - PWA Mobile Template</title>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, minimal-ui, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#3a57c4">
+    <title>Doccure - PWA Mobile Template</title>
 
-	<!-- Add link rel manifest -->
-	<link rel="manifest" href="manifest.json">
+    <!-- Add link rel manifest -->
+    <link rel="manifest" href="manifest.json">
 
-	<!-- Add iOS meta tags and icons -->
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-	<meta name="apple-mobile-web-app-title" content="Doccure - PWA Mobile Template">
-	<link rel="apple-touch-icon" href="assets/images/icons/icon-152x152.png">
+    <!-- Add iOS meta tags and icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Doccure - PWA Mobile Template">
+    <link rel="apple-touch-icon" href="assets/images/icons/icon-152x152.png">
 
-	<!-- Add description here -->
-	<meta name="description" content="Doccure - PWA Mobile Template">
+    <!-- Add description here -->
+    <meta name="description" content="Doccure - PWA Mobile Template">
 
-	<!-- Add meta theme-color -->
-	<meta name="theme-color" content="#2F3BA2" />
+    <!-- Add meta theme-color -->
+    <meta name="theme-color" content="#2F3BA2" />
 
-	<!-- Favicons -->
-	<link rel="icon" href="assets/images/favicon.png" type="image/x-icon" />
+    <!-- Favicons -->
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon" />
 
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 
-	<!-- Fontawesome CSS -->
-	<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
-	<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
 
-	<!-- Swiper CSS -->
-	<link rel="stylesheet" href="assets/plugins/swiper/css/swiper.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="assets/plugins/swiper/css/swiper.min.css">
 
-	<!-- Circle CSS -->
-	<link rel="stylesheet" href="assets/css/circle.css">
+    <!-- Circle CSS -->
+    <link rel="stylesheet" href="assets/css/circle.css">
 
-	<!-- Main CSS -->
-	<link rel="stylesheet" href="assets/css/style.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 
 <body>
-	<div class="main-wrapper">
-		<button id="butInstall" aria-label="Install" hidden>Add To Home Screen</button>
+    <div class="main-wrapper">
+        <div id="loader"></div>
+    </div>
 
-		<div class="side-menu" id="sidebar-menu">
-			<div class="close-btn"><span class="material-icons">close</span></div>
-			<ul>
-				<li>
-					<a class="" href="index.html">
-						<span class="material-icons">dashboard</span>
-						Dashboard
-					</a>
-				</li>
-				<li>
-					<a class="" href="appointments.html">
-						<span class="material-icons">date_range</span>
-						Appointments
-					</a>
-				</li>
-				<li>
-					<a class="" href="patients-list.html">
-						<span class="material-icons">person</span>
-						My Patients
-					</a>
-				</li>
-				<li>
-					<a class="" href="schedule-timings.html">
-						<span class="material-icons">access_time</span>
-						Schedule Timings
-					</a>
-				</li>
-				<li>
-					<a class="" href="invoices.html">
-						<span class="material-icons">insert_drive_file</span>
-						Invoices
-					</a>
-				</li>
-				<li>
-					<a class="" href="pages.html">
-						<span class="material-icons">pages</span>
-						Pages
-					</a>
-				</li>
-				<li>
-					<a class="" href="chat.html">
-						<span class="material-icons">message</span>
-						Message
-					</a>
-				</li>
-				<li>
-					<a class="" href="patient-profile-settings.html">
-						<span class="material-icons">settings</span>
-						Profile Settings
-					</a>
-				</li>
-				<li>
-					<a class="" href="social-media.html">
-						<span class="material-icons">share</span>
-						Social Media
-					</a>
-				</li>
-				<li>
-					<a class="" href="change-password.html">
-						<span class="material-icons">lock_open</span>
-						Change Password
-					</a>
-				</li>
-			</ul>
-			<a class="sidebar-logout" href="login.html"><span><img src="assets/images/open-account-logout.svg"
-						alt=""></span>Logout</a>
-		</div>
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-		<div class="home">
+    <!-- /Main wrapper -->
 
-			<div class="navbar two-action no-hairline">
-				<div class="navbar-inner d-flex align-items-center">
-					<div class="left">
-						<a href="#" class="link icon-only">
-							<i class="custom-hamburger">
-								<span><b></b></span>
-							</i>
-						</a>
-					</div>
-					<div class="sliding custom-title">Find Doctor</div>
-					<div class="right d-flex">
-						<a href="notifications.html" class="link icon-only"><i
-								class="material-icons">notifications</i></a>
-						<a href="#" data-toggle="dropdown" aria-expanded="true" class="link"><i
-								class="material-icons">more_vert</i></a>
-						<div class="dropdown-menu dropdown-menu-right header_drop_icon">
-							<a href="patient-profile.html" class="dropdown-item">My Profile</a>
-							<a href="patient-profile-settings.html" class="dropdown-item">Settings</a>
-							<a href="login.html" class="dropdown-item">Log Out</a>
-						</div>
-					</div>
-				</div>
-			</div>
+    <script src="assets/js/jquery-3.5.1.min.js"></script>
 
-			<div class="page-content header-bg">
-
-				<div class="top-search">
-					<div class="container">
-						<div class="search-area">
-							<form action="search">
-								<div class="list inset">
-									<ul>
-										<li class="d-flex">
-											<div class="item-icon">
-												<i class="search-icon fas fa-user"></i>
-											</div>
-											<div class="item-col">
-												<select class="form-control" placeholder="gender" id="gender">
-													<option value="">Any Gender</option>
-													<option value="male">Male</option>
-													<option value="female">Female</option>
-
-												</select>
-											</div>
-										</li>
-										<li class="d-flex">
-											<div class="item-icon">
-												<i class="search-icon fas fa-h-square"></i>
-											</div>
-											<div class="item-col">
-												<select class="form-control" placeholder="gender" id="specialty">
-													<option value="">Any Specialty</option>
-													<option value="dentist">Dentist</option>
-													<option value="radiologist">Radiologist</option>
-													<option value="cardiologist">Cardiologist</option>
-												</select>
-											</div>
-										</li>
-									</ul>
-									<a id="search" class="button button-large button-primary btn">Search
-										Now</a>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
+    <!-- Bootstrap Core JS -->
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
 
 
-				<!-- focused -->
-				<div class="focused segments mt-0 pb-0 mx-2 search-doctor">
-					<div class="focused-content">
-						<div class="swiper-container doctors-list">
+    <!-- Swiper JS -->
+    <script src="assets/plugins/swiper/js/swiper.min.js"></script>
 
-						</div>
-					</div>
-				</div>
+    <!-- Add the install script here -->
+    <script src="assets/js/install.js"></script>
 
-			</div>
-		</div>
+    <!-- sweet alert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/script.js"></script>
 
-	</div>
+    <script type="module" src="../scripts/index.js"></script>
 
-	<!-- Axios -->
-	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-	<!-- /Main wrapper -->
-
-	<script src="assets/js/jquery-3.5.1.min.js"></script>
-
-	<!-- Bootstrap Core JS -->
-	<script src="assets/js/popper.min.js"></script>
-	<script src="assets/js/bootstrap.min.js"></script>
-
-	<!-- Swiper JS -->
-	<script src="assets/plugins/swiper/js/swiper.min.js"></script>
-
-	<!-- Add the install script here -->
-	<script src="assets/js/install.js"></script>
-
-	<!-- Custom JS -->
-	<script src="assets/js/script.js"></script>
-	<script type="module" src="../scripts/patient-dashboard.js"></script>
 
 </body>
 

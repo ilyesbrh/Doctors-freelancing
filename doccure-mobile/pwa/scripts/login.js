@@ -35,7 +35,7 @@ $('#login-btn').on('click', async function () {
             if (user.data.role === 'patient') {
 
 
-                window.location.href = 'index.html';
+                window.location.href = 'patient-dashboard.html';
             } else {
 
                 window.location.href = 'doctor-dashboard.html';

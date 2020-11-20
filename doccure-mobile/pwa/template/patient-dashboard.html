@@ -42,17 +42,17 @@
 
 	<!-- Main CSS -->
 	<link rel="stylesheet" href="assets/css/style.css">
-
 </head>
 
 <body>
 	<div class="main-wrapper">
+		<button id="butInstall" aria-label="Install" hidden>Add To Home Screen</button>
 
 		<div class="side-menu" id="sidebar-menu">
 			<div class="close-btn"><span class="material-icons">close</span></div>
 			<ul>
 				<li>
-					<a class="" href="doctor-dashboard.html">
+					<a class="" href="patient-dashboard.html">
 						<span class="material-icons">dashboard</span>
 						Dashboard
 					</a>
@@ -64,13 +64,13 @@
 					</a>
 				</li>
 				<li>
-					<a class="" href="doctor-profile-settings.html">
+					<a class="" href="patient-profile-settings.html">
 						<span class="material-icons">settings</span>
 						Profile Settings
 					</a>
 				</li>
 				<li>
-					<a class="" href="doctor-profile.html">
+					<a class="" href="patient-profile-settings.html">
 						<span class="material-icons">person</span>
 						My Profile
 					</a>
@@ -89,91 +89,62 @@
 						</i>
 					</a>
 				</div>
-				<div class="sliding custom-title">Doctor Dashboard</div>
+				<div class="sliding custom-title">Find Doctor</div>
 				</div>
 			</div>
 		</div>
 
-		<div class="page-content header-bg pt-0">
-			<div class="container">
+		<div class="home">
 
-				<div class="doctor-widget doctor-dashboard">
-					<div class="doc-info-left">
-						<div class="doctor-img">
-							<a class="doctor-img-profile" href="doctor-dashboard.html">
-								<img src="assets/images/doctors/doctor-02.jpg" class="img-fluid img-circle"
-									alt="User Image">
-							</a>
-						</div>
-						<div class="doc-info-cont">
-							<div class="toggle-icon-doctor">
-								<div class="inner-toggle-icon">
-									<i class="fas fa-ellipsis-v"></i>
+			<div class="page-content header-bg">
+
+				<div class="top-search">
+					<div class="container">
+						<div class="search-area">
+							<form action="search">
+								<div class="list inset">
+									<ul>
+										<li class="d-flex">
+											<div class="item-icon">
+												<i class="search-icon fas fa-user"></i>
+											</div>
+											<div class="item-col">
+												<select class="form-control" placeholder="gender" id="gender">
+													<option value="">Any Gender</option>
+													<option value="male">Male</option>
+													<option value="female">Female</option>
+
+												</select>
+											</div>
+										</li>
+										<li class="d-flex">
+											<div class="item-icon">
+												<i class="search-icon fas fa-h-square"></i>
+											</div>
+											<div class="item-col">
+												<select class="form-control" placeholder="gender" id="specialty">
+													<option value="">Any Specialty</option>
+													<option value="dentist">Dentist</option>
+													<option value="radiologist">Radiologist</option>
+													<option value="cardiologist">Cardiologist</option>
+												</select>
+											</div>
+										</li>
+									</ul>
+									<a id="search" class="button button-large button-primary btn">Search
+										Now</a>
 								</div>
-							</div>
-							<h4 class="doc-name"><a href="doctor-profile.html">Dr. Darren Elder</a></h4>
-							<p class="doc-speciality">BDS, MDS - Oral & Maxillofacial Surgery</p>
-							<h5 class="doc-department">
-								<span class="speciality-img"><img src="assets/images/specialities/specialities-05.png"
-										class="img-fluid" alt="Speciality"></span> Dentist
-							</h5>
-							<div class="doc-info">
-								<div class="rating">
-									<span class="doc-experince">15+ Exp</span>
-								</div>
-								<div class="doc-location">
-									<p>(<i class="fas fa-map-marker-alt"></i> Florida, USA)</p>
-								</div>
-							</div>
+							</form>
 						</div>
 					</div>
 				</div>
 
-				<div class="patient-details">
-					<div class="inner-patient-detaials">
-						<div class="patient-col">
-							<div class="inner-patient-col">
-								<div class="progress-col">
-									<div class="c100 p80 small">
-										<span class="pat-img"><img src="assets/images/dentist-1.svg"
-												alt="dentist"></span>
-										<div class="slice">
-											<div class="bar"></div>
-											<div class="fill"></div>
-										</div>
-									</div>
-								</div>
-								<h6>Total Patients</h6>
-								<h4>1300+</h4>
-								<span class="date">March 16, 2020</span>
-							</div>
-						</div>
-						<div class="patient-col">
-							<div class="inner-patient-col">
-								<div class="progress-col">
-									<div class="c100 p40 small">
-										<span class="pat-img"><img src="assets/images/patient.svg" alt="patient"></span>
-										<div class="slice">
-											<div class="bar"></div>
-											<div class="fill"></div>
-										</div>
-									</div>
-								</div>
-								<h6>Today Patients</h6>
-								<h4>160</h4>
-								<span class="date">March 16, 2020</span>
-							</div>
-						</div>
-					</div>
-				</div>
 
-				<div class="appointments-details">
-					<div class="inner-appointment">
-						<div class="appointment-col">
-							<a href="#" class="btn">Today <br>Appointments</a>
-						</div>
-						<div class="appointment-col">
-							<a href="#" class="btn">Upcoming <br>Appointments</a>
+				<!-- focused -->
+				<div class="focused segments mt-0 pb-0 mx-2 search-doctor">
+					<div class="focused-content">
+						<div class="swiper-container doctors-list">
+
 						</div>
 					</div>
 				</div>
@@ -182,6 +153,7 @@
 		</div>
 
 	</div>
+
 	<!-- Axios -->
 	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
@@ -201,8 +173,7 @@
 
 	<!-- Custom JS -->
 	<script src="assets/js/script.js"></script>
-
-	<script type="module" src="../scripts/doctor-dashboard.js"></script>
+	<script type="module" src="../scripts/patient-dashboard.js"></script>
 
 </body>
 
