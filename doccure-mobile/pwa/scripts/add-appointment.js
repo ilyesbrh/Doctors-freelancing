@@ -4,15 +4,15 @@ import restApi from "../scripts/REST_API.service.js";
 var auth = new authService();
 var api = new restApi();
 
-var doctor;
+var id;
 
 jQuery(document).ready(function () {
 
     let params = new URLSearchParams(window.location.search);
-    doctor = JSON.parse(params.get("doctor"));
+    id = params.get("id");
+    name = params.get("name");
 
-    $('#name').text(doctor.name);
-    $('#doctor').val(doctor.phone);
+    $('#name').text(name);
 
     jQuery('#date').datetimepicker(
         {
@@ -32,7 +32,7 @@ $('#login-btn').on('click', function () {
 });
 async function bookAppointment() {
     let data = {
-        doctor: doctor.id,
+        doctor: id,
         from_time: $('#date').val(),
         description: $('#description').val(),
     };
@@ -60,10 +60,10 @@ async function bookAppointment() {
             throw { response, message: 'cant book' };
         }
     } catch (error) {
-
+        console.log(error.response.data.non_field_errors[0])
         swal({
-            title: "Pick another date!",
-            text: "Please verify your inputs!",
+            title: "Unable To Book!",
+            text: error.response.data.non_field_errors[0],
             icon: "error",
         });
     }

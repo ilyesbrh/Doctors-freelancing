@@ -20,13 +20,15 @@ jQuery(document).ready(async () => {
 });
 
 function getDoctorWidgetHTML(e) {
+    let picture = "maledoc.svg"
+    if(e.gender == 'female')  picture = "doctofemr.svg"
+
     return `
     <div class="doctor-widget">
         <div class="doc-info-left">
             <div class="doctor-img">
                 <a href="doctor-profile.html">
-                    <img src="assets/images/doctors/doctor-thumb-01.jpg" class="img-fluid"
-                        alt="User Image">
+                <img src="assets/images/${picture}" style="height:100px;" alt="">
                 </a>
             </div>
             <div class="doc-info-cont">

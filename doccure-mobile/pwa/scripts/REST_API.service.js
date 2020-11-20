@@ -20,7 +20,7 @@ export default class restService {
     }
     async getPatientAppointments() {
 
-        let result = await axios.get('patient/me/appointments/');
+        let result = await axios.get('patients/me/appointments/');
 
         return result;
     }

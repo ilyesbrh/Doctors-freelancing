@@ -69,8 +69,7 @@ jQuery(document).ready(async () => {
 
 
     $('#book-btn').on('click', function () {
-
-        location.href = 'add-appointment.html?doctor=' + JSON.stringify(me);
+        location.href = 'add-appointment.html?id=' + me.id + '&name=' + me.name;
     });
 
 });
