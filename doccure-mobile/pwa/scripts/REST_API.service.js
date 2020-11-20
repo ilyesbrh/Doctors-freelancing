@@ -12,11 +12,13 @@ export default class restService {
 
         return result;
     }
-    async getPatientProfile() {
+    async getPatientProfile(id) {
 
-        let result = await axios.get('patients/me');
-
-        return result;
+        if (id) {
+            return await axios.get('patients/' + id);
+        } else {
+            return await axios.get('patients/me');
+        }
     }
     async getPatientAppointments() {
 

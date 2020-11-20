@@ -6,8 +6,11 @@ var api = new restApi();
 
 jQuery(document).ready(async () => {
 
+    let params = new URLSearchParams(window.location.search);
+    let id = params.get("id");
+
     $('.doctor-profile-tab').append('<div id="loader"><div/>')
-    let me = (await api.getPatientProfile()).data;
+    let me = (await api.getPatientProfile(id)).data;
 
     console.log(me);
 
