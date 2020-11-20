@@ -27,7 +27,7 @@ jQuery(document).ready(async () => {
 
 function getAllBookingsHTML(e) {
     let button = `<div class="status-btn">
-                    <a href="" class="btn print"><i><img src="assets/images/icon-time.svg" alt=""></i>Not ready yet</a>
+                    <a class="btn print"><i><img src="assets/images/icon-time.svg" alt=""></i>Not ready yet</a>
                 </div>`
 
     if (moment().isAfter(e.from_time)) {

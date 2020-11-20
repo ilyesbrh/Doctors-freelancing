@@ -60,4 +60,10 @@ export default class restService {
         return result;
     }
 
+    async startAppointment(id) {
+        let result = await axios.post('appointments/' + id);
+
+        return result;
+    }
+
 }
