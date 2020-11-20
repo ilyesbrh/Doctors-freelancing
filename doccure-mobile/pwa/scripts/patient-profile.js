@@ -6,6 +6,7 @@ var api = new restApi();
 
 jQuery(document).ready(async () => {
 
+    $('.doctor-profile-tab').append('<div id="loader"><div/>')
     let me = (await api.getPatientProfile()).data;
 
     console.log(me);
@@ -13,7 +14,7 @@ jQuery(document).ready(async () => {
     $('#name').text(me.name);
     $('#gender').text('Gender - ' + me.gender);
     $('#blood_group').text('Blood group: ' + me.blood_group.toUpperCase());
-    $('#address_line1').text(me.address_line1);
+    $('#address_line1').text(me.state + ', ' + me.country);
     $('#phone').text(me.phone);
 
     $('#bio').text(me.bio);
@@ -31,6 +32,20 @@ jQuery(document).ready(async () => {
         $(".patient-appointments-col.medical_records").append(getMedicalRecordsHTML(e, i))
     });
 
+    $(".prescription-btn").on("click", function() {
+        $("#prescription-modal" + $(this).attr('id')).css("display", "block");
+    })
+
+    $(".close").on("click", function() {
+        $(".modal").css("display", "none");
+    })
+
+    $(".medical-record-btn").on("click", function() {
+        $("#medical-record-modal" + $(this).attr('id')).css("display", "block");
+    })
+
+    $("#loader").remove()
+    $('.container').removeClass('hidden')
 });
 
 function getMedicalRecordsHTML(e, i) {
@@ -46,15 +61,27 @@ function getMedicalRecordsHTML(e, i) {
                 <div class="invoice-widget">
                     <div class="pat-info-left">
 
-                        <div class="pat-info-cont">
+                    <div class="pat-info-cont">
                             <h4 class="pat-name"><a href="doctor-profile.html?=${e.doctor}">${e.doctor_name}</a></h4>
                             <div class="patient-details-col">
                                 <span class="">${e.doctor_specialty}</span>
                                 <span class="filling">${e.title}</span>
                             </div>
-                            <div class="download-pdf">
-                                <a href="assets/images/logo.png" download>resume.pdf</a>
+                            <div class="status-col no-shadow">
+                            <div class="status-btn">
+                                <a href="#" id="${i}" class="btn view-eye medical-record-btn"><i><img src="assets/images/icon-awesome-eye.svg" alt=""></i>View</a>
                             </div>
+                        </div>                           
+                        </div>
+                        <div id="medical-record-modal${i}" class="modal">
+
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <h3 style="margin: 10px 0;">Medical Record</h3>
+                            <h3 style="margin: 10px 0;">${e.title}</h3>
+                            <p id="modal-content">${e.medical_record}</p>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -78,10 +105,22 @@ function getPrescriptionHTML(e, i) {
                             <div class="patient-details-col">
                                 <span class="">${e.doctor_specialty}</span>
                             </div>
-                            <h4 style="margin-top:20px"> Details </h4>
-                            <p>${e.prescription}</p>
-                           
+                            <div class="status-col no-shadow">
+                            <div class="status-btn">
+                                <a href="#" id="${i}" class="btn view-eye prescription-btn"><i><img src="assets/images/icon-awesome-eye.svg" alt=""></i>View</a>
+                            </div>
+                        </div>                           
                         </div>
+                        <div id="prescription-modal${i}" class="modal">
+
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <h3 style="margin: 10px 0;">Prescription</h3>
+                            <p id="modal-content">${e.prescription}</p>
+                        </div>
+
+                    </div>
                     </div>
                 </div>
             </div>`;
@@ -102,12 +141,8 @@ function getAllBookingsHTML(e) {
                         <div class="pat-info-cont">
                             <h4 class="pat-name"><a href="doctor-profile.html?id=${e.doctor}">${e.doctor_name}</a></h4>
                             <div class="patient-details-col">
-                                <span class="">${e.doctor_specialty}</span>
-                            </div>
-                            <div class="hour-col">
-                                <div>
-                                    <span class="hours">Appt Date - ${moment(e.from_time).format('MMMM Do YYYY, h:mm:ss a')}</span>
-                                </div>
+                            <span class="">Appt Date - ${moment(e.from_time).format('MMMM Do YYYY, h:mm a')}</span>
+                        </div>
                             </div>
                         </div>
                     </div>

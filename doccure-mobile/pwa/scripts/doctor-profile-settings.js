@@ -257,7 +257,8 @@ async function save() {
 
     });
 
-    let pricing = $('#pricing').val() == '' ? null : $('#pricing').val()
+    let birthday = $('#birthday').val() ? $('#birthday').val() : null
+    let pricing = $('#pricing').val() ? $('#pricing').val() : null
 
     let me = {
         "name": $('#username').val(),
@@ -265,7 +266,7 @@ async function save() {
         "gender": $('#gender').val(),
         "specialty": $('#specialty').val(),
         "bio": $('#bio').val(),
-        "birthday": $('#birthday').val(),
+        "birthday": birthday,
         "address_line1": $('#address_line1').val(),
         "address_line2": $('#address_line2').val(),
         "state": $('#state').val(),
@@ -295,7 +296,7 @@ async function save() {
             location.href = 'doctor-profile.html';
         } else {
             await swal({
-                title: "Can't Log in!",
+                title: "Can't update profile!",
                 text: "Please verify your inputs!",
                 icon: "error",
             });
@@ -304,7 +305,7 @@ async function save() {
     } catch (e) {
         console.log(e);
         await swal({
-            title: "Can't Log in!",
+            title: "Can't update profile!",
             text: "Please verify your inputs!",
             icon: "error",
         });

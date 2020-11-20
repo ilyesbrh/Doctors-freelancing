@@ -6,7 +6,7 @@ var api = new restApi();
 
 jQuery(document).ready(async () => {
 
-
+    $('.container').append('<div id="loader"><div/>')
     let me = (await api.getPatientProfile()).data;
 
 
@@ -25,6 +25,8 @@ jQuery(document).ready(async () => {
     $('#country').val(me.country);
     $('#postal_code').val(me.postal_code);
 
+    $("#loader").remove()
+    $('.tab-content').removeClass('hidden')
 });
 
 $('.save-btn').on('click', (e) => {
@@ -34,7 +36,8 @@ $('.save-btn').on('click', (e) => {
 });
 
 async function save() {
-    let bd = moment($('#birthday').val()).format('YYYY-MM-DD');
+
+    let birthday = $('#birthday').val() ? $('#birthday').val() : null
 
     let me = {
         "name": $('#username').val(),
@@ -42,7 +45,7 @@ async function save() {
         "gender": $('#gender').val(),
         "blood_group": $('#blood_group').val(),
         "bio": $('#bio').val(),
-        "birthday": bd,
+        "birthday": birthday,
         "address_line1": $('#address_line1').val(),
         "address_line2": $('#address_line2').val(),
         "state": $('#state').val(),
@@ -62,7 +65,7 @@ async function save() {
             location.href = 'patient-profile.html';
         } else {
             await swal({
-                title: "Can't Log in!",
+                title: "Can't update profile!",
                 text: "Please verify your inputs!",
                 icon: "error",
             });
@@ -71,7 +74,7 @@ async function save() {
     } catch (e) {
         console.log(e);
         await swal({
-            title: "Can't Log in!",
+            title: "Can't update profile!",
             text: "Please verify your inputs!",
             icon: "error",
         });
