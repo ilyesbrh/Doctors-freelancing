@@ -6,6 +6,12 @@ export default class restService {
 
     constructor() { }
 
+    async bookAppointment(data) {
+
+        let result = await axios.post('appointments/', data);
+
+        return result;
+    }
     async getPatientProfile() {
 
         let result = await axios.get('patients/me');

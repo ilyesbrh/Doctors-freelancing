@@ -13,6 +13,8 @@ jQuery(document).ready(async () => {
 
     let me = (await api.getDoctorProfile(id)).data;
 
+    me.id = id;
+
     if (id) {
         $('#bookAppointment').show();
     }
@@ -21,7 +23,7 @@ jQuery(document).ready(async () => {
     $('#specialty').text(me.specialty);
     $('#bio').text(me.bio);
     $('#location').append('<i class="fas fa-map-marker-alt"></i> ' + me.state + ', ' + me.country);
-    
+
     me.educations.forEach(e => {
         $("#education-experience").append(getEducationHtml(e));
     });
@@ -64,7 +66,15 @@ jQuery(document).ready(async () => {
 
     $("#loader").remove()
     $('.tab-content').removeClass('hidden')
+
+
+    $('#book-btn').on('click', function () {
+
+        location.href = 'add-appointment.html?doctor=' + JSON.stringify(me);
+    });
+
 });
+
 
 function getHoursHtml(e) {
     let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];

@@ -5589,12 +5589,13 @@ ul li span.trash-icon {
 	padding-right: 0;
 }
 .change-password-col ul.change-list input[type="text"],
+.change-password-col ul.change-list textarea,
 .change-password-col ul.change-list input[type="tel"],
 .change-password-col ul.change-list input[type="password"] {
 	font-size: 13px;
 	box-shadow: 0px 6px 15px #00000012;
 	border: 1px solid #E8E8E8;
-	border-radius: 50px;
+	border-radius: 20px;
 	background-color: #fff;
 	height: 55px;
 	padding: 10px 22px;

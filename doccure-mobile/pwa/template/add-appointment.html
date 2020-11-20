@@ -30,6 +30,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 
+    <!-- Bootstrap Datepicker CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/jquery.datetimepicker.min.css" />
+
     <!-- Fontawesome CSS -->
     <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
@@ -54,50 +57,51 @@
                         <img src="assets/images/left-arrow-big-black.svg" alt=""></a>
                 </div>
                 <div class="register-icon">
-                    <img src="assets/images/register-top-img.png" alt="">
-                </div>
-                <div class="logo">
-                    <a href="index.html"><img src="assets/images/logo.svg" alt="doccure"></a>
+                    <img class="mt-5" src="assets/images/user.jpg" alt="">
                 </div>
                 <div class="register-inner-col">
                     <div class="top-title">
-                        <div>
-                            <h3>Login</h3>
-                        </div>
-                        <div>
-                            <a href="register-doctor.html">Are you Doctor?</a>
+                        <div class="mx-auto w-auto">
+                            <h2 id="name" style="font-weight: bold;">Dr. ilies bourouh</h2>
                         </div>
                     </div>
                     <ul class="change-list">
                         <li class="item-content item-input">
                             <div class="item-col">
                                 <div class="item-input-wrap">
-                                    <input id="phone" type="text" placeholder="Phone number">
-                                    <div class="item-input-icon"><img src="assets/images/phone-icon.svg" alt=""></div>
+                                    <input id="doctor" type="text" placeholder="Doctor id"
+                                        style="background-color: whitesmoke;" disabled>
+                                    <div class="item-input-icon"><img src="assets/images/user-icon.svg" alt=""></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="item-content item-input">
+                            <div class="item-col">
+                                <div class="item-input-wrap date-picker-col">
+                                    <input id="date" type="text" placeholder="Appointment time" name="date"
+                                        autocomplete="off">
+                                    <div class="item-input-icon calendar-icon"><img
+                                            src="assets/images/icon-metro-calendar-big.svg" alt="">
+                                    </div>
                                 </div>
                             </div>
                         </li>
                         <li class="item-content item-input">
                             <div class="item-col">
                                 <div class="item-input-wrap">
-                                    <input id="password" type="password" placeholder="Password">
-                                    <div class="item-input-icon"><img src="assets/images/lock-icon.svg" alt=""></div>
+                                    <textarea id="description" type="text" placeholder="Description"
+                                        style="min-height: 80px;"></textarea>
                                 </div>
                             </div>
                         </li>
                         <li class="col-50 save-password">
                         </li>
-                        <li class="col-50 forgot-password">
-                            <a href="forgot-password.html">Forgot Password ?</a>
-                        </li>
                         <li class="item-content item-input">
                             <div class="item-input-wrap submit-btn-col">
-                                <button id="login-btn" type="button" class="btn btn-submit">Login Now</button>
+                                <button id="login-btn" type="button" class="btn btn-submit">Book Now</button>
                             </div>
                         </li>
                     </ul>
-                    <span class="login-back">Don't have an login ? <a href="register-patient.html">Signup
-                            Now!</a></span>
                 </div>
             </div>
         </div>
@@ -115,6 +119,11 @@
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
 
+    <!-- Bootstrap Datepicker JS -->
+    <script src="assets/js/jquery.datetimepicker.full.min.js"></script>
+
+    <!-- moment -->
+    <script src="assets/js/moment.min.js"></script>
 
     <!-- Swiper JS -->
     <script src="assets/plugins/swiper/js/swiper.min.js"></script>
@@ -127,7 +136,7 @@
     <!-- Custom JS -->
     <script src="assets/js/script.js"></script>
 
-    <script type="module" src="../scripts/login.js"></script>
+    <script type="module" src="../scripts/add-appointment.js"></script>
 
 
 

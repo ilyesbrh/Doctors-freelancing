@@ -101,16 +101,17 @@ function getExperienceHtml(e) {
                 <div class="item-col">
                     <div class="item-title item-label">From</div>
                     <div class="item-input-wrap date-picker-col">
-                        <input type="text" name="date" id="date" value="${e.from_day}" data-select="datepicker" autocomplete="off">
+                        <input class="datepicker" type="text" name="date" value="${e.from_day}" data-select="datepicker" >
                         <span class="calendar-icon"><img src="assets/images/icon-metro-calendar-big.svg" alt=""></span>
                     </div>
+
                 </div>
             </li>
             <li class="item-content item-input col-50 dob">
                 <div class="item-col">
                     <div class="item-title item-label">To</div>
                     <div class="item-input-wrap date-picker-col">
-                        <input type="text" id="date" name="date"  value="${e.to_day}" data-select="datepicker" autocomplete="off">
+                        <input class="datepicker" type="text" name="date" value="${e.to_day}" data-select="datepicker" >
                         <span class="calendar-icon"><img src="assets/images/icon-metro-calendar-big.svg" alt=""></span>
                     </div>
                 </div>
