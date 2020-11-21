@@ -37,7 +37,7 @@ function getAllBookingsHTML(e) {
     }
 
     let profile = `<h4 class="pat-name">Doctor <a href="doctor-profile.html?id=${e.doctor_id}">${e.doctor_name}</a></h4>`
-    
+
     if (user.role === 'doctor') {
         profile = `<h4 class="pat-name">Patient <a href="patient-profile.html?id=${e.patient_id}">${e.patient_name}</a></h4>`
     }
