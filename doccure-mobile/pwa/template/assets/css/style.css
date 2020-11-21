@@ -6083,3 +6083,13 @@ ul li span.trash-icon {
 		max-width: 400px; 
 	}
 }
+
+.feel {
+  margin: 0px 10px;
+  background-color: white;
+  color: lightslategray;
+}
+
+.rating.selected{
+	color: green!important;
+}

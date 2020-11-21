@@ -34,10 +34,12 @@ $('#login-btn').on('click', async function () {
 
             if (user.data.role === 'patient') {
 
+                localStorage.setItem('user_type', 'patient');
 
                 window.location.href = 'patient-dashboard.html';
             } else {
 
+                localStorage.setItem('user_type', 'doctor');
                 window.location.href = 'doctor-dashboard.html';
             }
         }
