@@ -36,17 +36,16 @@ $('#confirm-btn').on('click', async function () {
     let data = {
         phone: $('#phone').val(),
         code: $('#code').val(),
-        password: $('#password').val(),
+        new_password: $('#password').val(),
     }
 
     console.log(data);
 
-    let response = await auth.resetPassword(data);
+    let response = await auth.resetConfirm(data);
 
     console.log(response);
 
     if (response) {
-
         window.location.href = 'login.html';
     }
 
