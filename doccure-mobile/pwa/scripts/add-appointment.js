@@ -6,13 +6,15 @@ var api = new restApi();
 
 var id, name;
 
-jQuery(document).ready(function () {
+jQuery(document).ready(async function () {
 
     $('.page-content').append('<div id="loader"><div/>')
 
     let params = new URLSearchParams(window.location.search);
     id = params.get("id");
-    name = params.get("name");
+    
+    let me = (await api.getDoctorProfile(id)).data;
+    name = me.name
 
     $('#name').text(name);
 
@@ -24,9 +26,31 @@ jQuery(document).ready(function () {
         }
     );
 
+    me.working_hours.forEach(e => {
+        $(".listing-hours").append(getHoursHtml(e));
+
+        if (moment().toDate().getDay() === e.weekday) {
+            $('#todayTiming').text(`${e.from_hour.slice(0, 5)} - ${e.to_hour.slice(0, 5)}`)
+        }
+
+    });
+
     $("#loader").remove()
     $('.list').removeClass('hidden')
 });
+
+function getHoursHtml(e) {
+    let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+    return `
+    <div class="listing-day">
+        <div class="day"><i class="check-icon-black"></i> ${days[e.weekday]}</div>
+        <div class="time-items">
+            <span class="time">${e.from_hour.slice(0, 5)} - ${e.to_hour.slice(0, 5)}</span>
+        </div>
+    </div>
+    `
+}
 
 $('#login-btn').on('click', function () {
 
