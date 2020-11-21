@@ -18,8 +18,6 @@ jQuery(document).ready(async () => {
     channelName = credentials.channel_name
     channelId = credentials.token;
 
-
-
     console.log(credentials);
 
     // Handle errors.
