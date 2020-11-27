@@ -34,8 +34,8 @@ async function afterCallInfo() {
     try {
 
         let response = prescription ?
-            (await api.addPrescription(id, { title: $('#title').val(), medical_record: $('#description').val() })) :
-            (await api.addMedicalRecord(id, { prescription: $('#description').val() }));
+            (await api.addPrescription(id, { prescription: $('#description').val() })) :
+            (await api.addMedicalRecord(id, { title: $('#title').val(), medical_record: $('#description').val() }));
 
         if (response) {
 
@@ -62,7 +62,7 @@ async function afterCallInfo() {
 
                 swal({
                     title: "Sent successfully!",
-                    text: 'now fill prescription',
+                    text: 'now fill the prescription',
                     icon: "success",
                 });
 
