@@ -202,8 +202,6 @@ async function ask() {
         },
     });
 
-    debugger;
-
     await api.sendRating(rating/* global variable declared in video-call.html -> script */, message ? message : '', id);
 
     location.href = 'index.html';
