@@ -86,9 +86,11 @@ async function bookAppointment() {
             throw { response, message: 'cant book' };
         }
     } catch (error) {
+        let theError = error.response.data.non_field_errors ? error.response.data.non_field_errors[0] : 'Select a time'
+        
         swal({
             title: "Unable To Book!",
-            text: error.response.data.non_field_errors[0],
+            text: theError,
             icon: "error",
         });
     }
