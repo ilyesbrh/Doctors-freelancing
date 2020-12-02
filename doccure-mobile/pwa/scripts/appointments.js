@@ -36,6 +36,16 @@ function getAllBookingsHTML(e) {
                 </div>`
     }
 
+    if (moment().isAfter(e.to_time) && user.role === 'doctor') {
+        button = `<div class="status-btn">
+                    <a href="add-after-call-info.html?id=${e.id}" class="btn success"><i><img src="assets/images/map-doctor.svg" alt=""></i>Add Prescription</a>
+                </div>`
+    } 
+    
+    if (moment().isAfter(e.to_time) && user.role === 'patient') {
+        button = ''
+    } 
+
     let profile = `<h4 class="pat-name">Doctor <a href="doctor-profile.html?id=${e.doctor_id}">${e.doctor_name}</a></h4>`
 
     if (user.role === 'doctor') {

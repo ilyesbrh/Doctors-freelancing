@@ -37,7 +37,7 @@ function getPrescriptionHTML(e, i) {
     return `<div class="patient-widget">
                 <div class="patient-top-details">
                     <div>
-                        <span class="invoice-id">Prescription ${i + 1}</span>
+                        <span class="invoice-id">PRE-${e.uid}</span>
                     </div>
                     <div>
                         <span class="date-col"> ${moment(e.created_time).format('DD MMM YYYY')}</span>
@@ -46,7 +46,7 @@ function getPrescriptionHTML(e, i) {
                 <div class="invoice-widget">
                     <div class="pat-info-left">
                         <div class="pat-info-cont">
-                            <h4 class="pat-name"><a href="doctor-profile.html?=${e.doctor}"> ${e.doctor_name}</a></h4>
+                            <h4 class="pat-name"><a> ${e.patient_name}</a></h4>
                             <div class="patient-details-col">
                                 <span class="">${e.doctor_specialty}</span>
                             </div>
