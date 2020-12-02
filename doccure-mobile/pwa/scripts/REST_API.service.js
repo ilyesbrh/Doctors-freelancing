@@ -40,6 +40,18 @@ export default class restService {
         return result;
     }
 
+    async getDoctorPrescriptions() {
+
+        let result = await axios.get('doctors/me/prescriptions/');
+        return result;
+    }
+
+    async getDoctorPatients() {
+
+        let result = await axios.get('doctors/me/patients/');
+        return result;
+    }
+
     async updateProfile(me) {
         let result = await axios.patch('doctors/me', me);
         return result;

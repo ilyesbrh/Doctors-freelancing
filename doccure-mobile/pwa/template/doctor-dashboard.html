@@ -104,39 +104,30 @@
 					<div class="doc-info-left">
 						<div class="doctor-img">
 							<a class="doctor-img-profile" href="doctor-dashboard.html">
-								<img src="assets/images/doctors/doctor-02.jpg" class="img-fluid img-circle"
+								<img src="assets/images/maledoc.svg" class="img-fluid img-circle"
 									alt="User Image">
 							</a>
 						</div>
 						<div class="doc-info-cont">
-							<div class="toggle-icon-doctor">
-								<div class="inner-toggle-icon">
-									<i class="fas fa-ellipsis-v"></i>
-								</div>
-							</div>
-							<h4 class="doc-name"><a href="doctor-profile.html">Dr. Darren Elder</a></h4>
-							<p class="doc-speciality">BDS, MDS - Oral & Maxillofacial Surgery</p>
-							<h5 class="doc-department">
-								<span class="speciality-img"><img src="assets/images/specialities/specialities-05.png"
-										class="img-fluid" alt="Speciality"></span> Dentist
-							</h5>
+							<h4 class="doc-name"><a href="doctor-profile.html" id="name"></a></h4>
+							<p class="doc-speciality" id="specialty"></p>
 							<div class="doc-info">
 								<div class="rating">
-									<span class="doc-experince">15+ Exp</span>
+									<span class="doc-experince" id="gender"></span>
 								</div>
-								<div class="doc-location">
-									<p>(<i class="fas fa-map-marker-alt"></i> Florida, USA)</p>
+								<div class="doc-location" id="location">
+									
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 
-				<div class="patient-details">
+				<div class="patient-details hidden">
 					<div class="inner-patient-detaials">
 						<div class="patient-col">
 							<div class="inner-patient-col">
-								<div class="progress-col">
+								<div class="progress-col" id="patients">
 									<div class="c100 p80 small">
 										<span class="pat-img"><img src="assets/images/dentist-1.svg"
 												alt="dentist"></span>
@@ -147,11 +138,10 @@
 									</div>
 								</div>
 								<h6>Total Patients</h6>
-								<h4>1300+</h4>
-								<span class="date">March 16, 2020</span>
+								<h4 id="patients-count"></h4>
 							</div>
 						</div>
-						<div class="patient-col">
+						<div class="patient-col" id="prescriptions">
 							<div class="inner-patient-col">
 								<div class="progress-col">
 									<div class="c100 p40 small">
@@ -162,9 +152,8 @@
 										</div>
 									</div>
 								</div>
-								<h6>Today Patients</h6>
-								<h4>160</h4>
-								<span class="date">March 16, 2020</span>
+								<h6>Total Prescriptions</h6>
+								<h4 id="prescriptions-count"></h4>
 							</div>
 						</div>
 					</div>

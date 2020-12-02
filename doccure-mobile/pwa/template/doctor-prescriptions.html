@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, minimal-ui, viewport-fit=cover">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#3a57c4">
+	<title>Doccure - PWA Mobile Template</title>
+
+	<!-- Add link rel manifest -->
+	<link rel="manifest" href="manifest.json">
+
+	<!-- Add iOS meta tags and icons -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="Doccure - PWA Mobile Template">
+	<link rel="apple-touch-icon" href="assets/images/icons/icon-152x152.png">
+
+	<!-- Add description here -->
+	<meta name="description" content="Doccure - PWA Mobile Template">
+
+	<!-- Add meta theme-color -->
+	<meta name="theme-color" content="#2F3BA2" />
+
+	<!-- Favicons -->
+	<link rel="icon" href="assets/images/favicon.png" type="image/x-icon" />
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+	<!-- Fontawesome CSS -->
+	<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+	<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+
+	<!-- Swiper CSS -->
+	<link rel="stylesheet" href="assets/plugins/swiper/css/swiper.min.css">
+
+	<!-- Circle CSS -->
+	<link rel="stylesheet" href="assets/css/circle.css">
+
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+	<div class="main-wrapper">
+
+		<div class="navbar two-action no-hairline">
+			<div class="navbar-inner d-flex align-items-center">
+				<div class="back-btn" style="margin-right: 10px; margin-bottom: 3px;"><a href="index.html" class="back link">
+                        <img src="assets/images/left-arrow-big.svg" alt=""></a>
+                </div>
+				<div class="sliding custom-title">My Prescriptions</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="page-content profile-settings">
+
+			<!-- Profile settings -->
+			<div class="container">
+
+				<div class="tab-content">
+					<div class="tab-pane active" id="appoinments">
+						<div class="panel panel-default">
+							<div id="collapseOne" class="panel-collapse collapse in">
+								<div class="panel-body">
+									<div class="patient-appointments-col">
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="tab-pane" id="prescriptions">
+						<div class="panel panel-default">
+							<div id="collapseTwo" class="panel-collapse collapse">
+								<div class="panel-body">
+									<div class="patient-appointments-col">
+										<div class="patient-widget">
+											<div class="patient-top-details">
+												<div>
+													<span class="invoice-id">Prescription 1</span>
+												</div>
+												<div>
+													<span class="date-col">14 Nov 2019</span>
+												</div>
+											</div>
+											<div class="invoice-widget">
+												<div class="pat-info-left">
+													<div class="patient-img">
+														<a href="#">
+															<img src="assets/images/doctors/doctor-thumb-01.jpg"
+																class="img-fluid" alt="User Image">
+														</a>
+													</div>
+													<div class="pat-info-cont">
+														<h4 class="pat-name"><a href="#">Dr. Ruby Perrin</a></h4>
+														<div class="patient-details-col">
+															<span class="">Dental</span>
+														</div>
+														<div class="status-col no-shadow">
+															<div class="status-btn">
+																<a href="#" class="btn view-eye"><i><img
+																			src="assets/images/icon-awesome-eye.svg"
+																			alt=""></i>View</a>
+															</div>
+															<div class="status-btn">
+																<a href="#" class="btn print"><i><img
+																			src="assets/images/icon-metro-printer.svg"
+																			alt=""></i>Print</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="patient-widget">
+											<div class="patient-top-details">
+												<div>
+													<span class="invoice-id">Prescription 2</span>
+												</div>
+												<div>
+													<span class="date-col">14 Nov 2019</span>
+												</div>
+											</div>
+											<div class="invoice-widget">
+												<div class="pat-info-left">
+													<div class="patient-img">
+														<a href="#">
+															<img src="assets/images/doctors/doctor-thumb-02.jpg"
+																class="img-fluid" alt="User Image">
+														</a>
+													</div>
+													<div class="pat-info-cont">
+														<h4 class="pat-name"><a href="#">Dr. Darren Elder</a></h4>
+														<div class="patient-details-col">
+															<span class="">Dental</span>
+														</div>
+														<div class="status-col no-shadow">
+															<div class="status-btn">
+																<a href="#" class="btn view-eye"><i><img
+																			src="assets/images/icon-awesome-eye.svg"
+																			alt=""></i>View</a>
+															</div>
+															<div class="status-btn">
+																<a href="#" class="btn print"><i><img
+																			src="assets/images/icon-metro-printer.svg"
+																			alt=""></i>Print</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="patient-widget">
+											<div class="patient-top-details">
+												<div>
+													<span class="invoice-id">Prescription 3</span>
+												</div>
+												<div>
+													<span class="date-col">14 Nov 2019</span>
+												</div>
+											</div>
+											<div class="invoice-widget">
+												<div class="pat-info-left">
+													<div class="patient-img">
+														<a href="#">
+															<img src="assets/images/doctors/doctor-thumb-03.jpg"
+																class="img-fluid" alt="User Image">
+														</a>
+													</div>
+													<div class="pat-info-cont">
+														<h4 class="pat-name"><a href="#">Dr. Deborah Angel</a></h4>
+														<div class="patient-details-col">
+															<span class="">Dental</span>
+														</div>
+														<div class="status-col no-shadow">
+															<div class="status-btn">
+																<a href="#" class="btn view-eye"><i><img
+																			src="assets/images/icon-awesome-eye.svg"
+																			alt=""></i>View</a>
+															</div>
+															<div class="status-btn">
+																<a href="#" class="btn print"><i><img
+																			src="assets/images/icon-metro-printer.svg"
+																			alt=""></i>Print</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="patient-widget">
+											<div class="patient-top-details">
+												<div>
+													<span class="invoice-id">Prescription 4</span>
+												</div>
+												<div>
+													<span class="date-col">14 Nov 2019</span>
+												</div>
+											</div>
+											<div class="invoice-widget">
+												<div class="pat-info-left">
+													<div class="patient-img">
+														<a href="#">
+															<img src="assets/images/doctors/doctor-thumb-07.jpg"
+																class="img-fluid" alt="User Image">
+														</a>
+													</div>
+													<div class="pat-info-cont">
+														<h4 class="pat-name"><a href="#">Dr. Ruby Perrin</a></h4>
+														<div class="patient-details-col">
+															<span class="">Dental</span>
+														</div>
+														<div class="status-col no-shadow">
+															<div class="status-btn">
+																<a href="#" class="btn view-eye"><i><img
+																			src="assets/images/icon-awesome-eye.svg"
+																			alt=""></i>View</a>
+															</div>
+															<div class="status-btn">
+																<a href="#" class="btn print"><i><img
+																			src="assets/images/icon-metro-printer.svg"
+																			alt=""></i>Print</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="tab-pane" id="medical-records">
+						<div class="panel panel-default">
+							<div id="collapseThree" class="panel-collapse collapse">
+								<div class="panel-body">
+									<div class="patient-appointments-col">
+										<div class="patient-widget">
+											<div class="patient-top-details">
+												<div>
+													<span class="invoice-id">#MR-0010</span>
+												</div>
+												<div>
+													<span class="date-col">14 Nov 2019</span>
+												</div>
+											</div>
+											<div class="invoice-widget">
+												<div class="pat-info-left">
+													<div class="patient-img">
+														<a href="#">
+															<img src="assets/images/doctors/doctor-thumb-01.jpg"
+																class="img-fluid" alt="User Image">
+														</a>
+													</div>
+													<div class="pat-info-cont">
+														<h4 class="pat-name"><a href="#">Dr. Ruby Perrin</a></h4>
+														<div class="patient-details-col">
+															<span class="">Dental</span>
+															<span class="filling">Dental Filling</span>
+														</div>
+														<div class="download-pdf">
+															<a href="assets/images/logo.png"
+																download>Dental-test.pdf</a>
+														</div>
+														<div class="status-col no-shadow">
+															<div class="status-btn">
+																<a href="#" class="btn view-eye"><i><img
+																			src="assets/images/icon-awesome-eye.svg"
+																			alt=""></i>View</a>
+															</div>
+															<div class="status-btn">
+																<a href="#" class="btn print"><i><img
+																			src="assets/images/icon-metro-printer.svg"
+																			alt=""></i>Print</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="patient-widget">
+											<div class="patient-top-details">
+												<div>
+													<span class="invoice-id">#MR-0010</span>
+												</div>
+												<div>
+													<span class="date-col">14 Nov 2019</span>
+												</div>
+											</div>
+											<div class="invoice-widget">
+												<div class="pat-info-left">
+													<div class="patient-img">
+														<a href="#">
+															<img src="assets/images/doctors/doctor-thumb-02.jpg"
+																class="img-fluid" alt="User Image">
+														</a>
+													</div>
+													<div class="pat-info-cont">
+														<h4 class="pat-name"><a href="#">Dr. Darren Elder</a></h4>
+														<div class="patient-details-col">
+															<span class="">Dental</span>
+															<span class="filling">Dental Filling</span>
+														</div>
+														<div class="download-pdf">
+															<a href="../assets/images/logo.png"
+																download>Dental-test.pdf</a>
+														</div>
+														<div class="status-col no-shadow">
+															<div class="status-btn">
+																<a href="#" class="btn view-eye"><i><img
+																			src="assets/images/icon-awesome-eye.svg"
+																			alt=""></i>View</a>
+															</div>
+															<div class="status-btn">
+																<a href="#" class="btn print"><i><img
+																			src="assets/images/icon-metro-printer.svg"
+																			alt=""></i>Print</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="patient-widget">
+											<div class="patient-top-details">
+												<div>
+													<span class="invoice-id">#MR-0010</span>
+												</div>
+												<div>
+													<span class="date-col">14 Nov 2019</span>
+												</div>
+											</div>
+											<div class="invoice-widget">
+												<div class="pat-info-left">
+													<div class="patient-img">
+														<a href="#">
+															<img src="assets/images/doctors/doctor-thumb-03.jpg"
+																class="img-fluid" alt="User Image">
+														</a>
+													</div>
+													<div class="pat-info-cont">
+														<h4 class="pat-name"><a href="#">Dr. Deborah Angel</a></h4>
+														<div class="patient-details-col">
+															<span class="">Dental</span>
+															<span class="filling">Dental Filling</span>
+														</div>
+														<div class="download-pdf">
+															<a href="../assets/images/logo.png"
+																download>Dental-test.pdf</a>
+														</div>
+														<div class="status-col no-shadow">
+															<div class="status-btn">
+																<a href="#" class="btn view-eye"><i><img
+																			src="assets/images/icon-awesome-eye.svg"
+																			alt=""></i>View</a>
+															</div>
+															<div class="status-btn">
+																<a href="#" class="btn print"><i><img
+																			src="assets/images/icon-metro-printer.svg"
+																			alt=""></i>Print</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="patient-widget">
+											<div class="patient-top-details">
+												<div>
+													<span class="invoice-id">#MR-0010</span>
+												</div>
+												<div>
+													<span class="date-col">14 Nov 2019</span>
+												</div>
+											</div>
+											<div class="invoice-widget">
+												<div class="pat-info-left">
+													<div class="patient-img">
+														<a href="#">
+															<img src="assets/images/doctors/doctor-thumb-07.jpg"
+																class="img-fluid" alt="User Image">
+														</a>
+													</div>
+													<div class="pat-info-cont">
+														<h4 class="pat-name"><a href="#">Dr. Ruby Perrin</a></h4>
+														<div class="patient-details-col">
+															<span class="">Dental</span>
+															<span class="filling">Dental Filling</span>
+														</div>
+														<div class="download-pdf">
+															<a href="../assets/images/logo.png"
+																download>Dental-test.pdf</a>
+														</div>
+														<div class="status-col no-shadow">
+															<div class="status-btn">
+																<a href="#" class="btn view-eye"><i><img
+																			src="assets/images/icon-awesome-eye.svg"
+																			alt=""></i>View</a>
+															</div>
+															<div class="status-btn">
+																<a href="#" class="btn print"><i><img
+																			src="assets/images/icon-metro-printer.svg"
+																			alt=""></i>Print</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="tab-pane" id="billing">
+						<div class="panel panel-default">
+							<div id="collapseFour" class="panel-collapse collapse">
+								<div class="panel-body">
+									<div class="patient-appointments-col">
+										<div class="patient-widget">
+											<div class="patient-top-details">
+												<div>
+													<span class="invoice-id">#MR-0010</span>
+												</div>
+												<div>
+													<span class="date-col">Paid on - 14 Nov 2019</span>
+												</div>
+											</div>
+											<div class="invoice-widget">
+												<div class="pat-info-left">
+													<div class="patient-img">
+														<a href="#">
+															<img src="assets/images/doctors/doctor-thumb-01.jpg"
+																class="img-fluid" alt="User Image">
+														</a>
+													</div>
+													<div class="pat-info-cont">
+														<h4 class="pat-name"><a href="#">Dr. Ruby Perrin</a></h4>
+														<div class="patient-details-col">
+															<span class="">Dental</span>
+															<span class="filling">$450</span>
+														</div>
+														<div class="status-col no-shadow">
+															<div class="status-btn">
+																<a href="#" class="btn view-eye"><i><img
+																			src="assets/images/icon-awesome-eye.svg"
+																			alt=""></i>View</a>
+															</div>
+															<div class="status-btn">
+																<a href="#" class="btn print"><i><img
+																			src="assets/images/icon-metro-printer.svg"
+																			alt=""></i>Print</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="patient-widget">
+											<div class="patient-top-details">
+												<div>
+													<span class="invoice-id">#MR-0010</span>
+												</div>
+												<div>
+													<span class="date-col">Paid on - 14 Nov 2019</span>
+												</div>
+											</div>
+											<div class="invoice-widget">
+												<div class="pat-info-left">
+													<div class="patient-img">
+														<a href="#">
+															<img src="assets/images/doctors/doctor-thumb-02.jpg"
+																class="img-fluid" alt="User Image">
+														</a>
+													</div>
+													<div class="pat-info-cont">
+														<h4 class="pat-name"><a href="#">Dr. Darren Elder</a></h4>
+														<div class="patient-details-col">
+															<span class="">Dental</span>
+															<span class="filling">$450</span>
+														</div>
+														<div class="status-col no-shadow">
+															<div class="status-btn">
+																<a href="#" class="btn view-eye"><i><img
+																			src="assets/images/icon-awesome-eye.svg"
+																			alt=""></i>View</a>
+															</div>
+															<div class="status-btn">
+																<a href="#" class="btn print"><i><img
+																			src="../assets/images/icon-metro-printer.svg"
+																			alt=""></i>Print</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="patient-widget">
+											<div class="patient-top-details">
+												<div>
+													<span class="invoice-id">#MR-0010</span>
+												</div>
+												<div>
+													<span class="date-col">Paid on - 14 Nov 2019</span>
+												</div>
+											</div>
+											<div class="invoice-widget">
+												<div class="pat-info-left">
+													<div class="patient-img">
+														<a href="#">
+															<img src="assets/images/doctors/doctor-thumb-03.jpg"
+																class="img-fluid" alt="User Image">
+														</a>
+													</div>
+													<div class="pat-info-cont">
+														<h4 class="pat-name"><a href="#">Dr. Deborah Angel</a></h4>
+														<div class="patient-details-col">
+															<span class="">Dental</span>
+															<span class="filling">$450</span>
+														</div>
+														<div class="status-col no-shadow">
+															<div class="status-btn">
+																<a href="#" class="btn view-eye"><i><img
+																			src="assets/images/icon-awesome-eye.svg"
+																			alt=""></i>View</a>
+															</div>
+															<div class="status-btn">
+																<a href="#" class="btn print"><i><img
+																			src="assets/images/icon-metro-printer.svg"
+																			alt=""></i>Print</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="patient-widget">
+											<div class="patient-top-details">
+												<div>
+													<span class="invoice-id">#MR-0010</span>
+												</div>
+												<div>
+													<span class="date-col">Paid on - 14 Nov 2019</span>
+												</div>
+											</div>
+											<div class="invoice-widget">
+												<div class="pat-info-left">
+													<div class="patient-img">
+														<a href="#">
+															<img src="assets/images/doctors/doctor-thumb-07.jpg"
+																class="img-fluid" alt="User Image">
+														</a>
+													</div>
+													<div class="pat-info-cont">
+														<h4 class="pat-name"><a href="#">Dr. Ruby Perrin</a></h4>
+														<div class="patient-details-col">
+															<span class="">Dental</span>
+															<span class="filling">$450</span>
+														</div>
+														<div class="status-col no-shadow">
+															<div class="status-btn">
+																<a href="#" class="btn view-eye"><i><img
+																			src="assets/images/icon-awesome-eye.svg"
+																			alt=""></i>View</a>
+															</div>
+															<div class="status-btn">
+																<a href="#" class="btn print"><i><img
+																			src="assets/images/icon-metro-printer.svg"
+																			alt=""></i>Print</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!-- Profile settings -->
+	</div>
+
+	</div>
+
+	<!-- /Main wrapper -->
+
+	<!-- Axios -->
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+	<!-- time -->
+	<script src="assets/js/moment.min.js"></script>
+
+	<script src="assets/js/jquery-3.5.1.min.js"></script>
+
+	<!-- Bootstrap Core JS -->
+	<script src="assets/js/popper.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+
+	<!-- Swiper JS -->
+	<script src="assets/plugins/swiper/js/swiper.min.js"></script>
+
+	<!-- Add the install script here -->
+	<script src="assets/js/install.js"></script>
+
+	<!-- Custom JS -->
+	<script src="assets/js/script.js"></script>
+	<script type="module" src="../scripts/doctor-prescriptions.js"></script>
+
+</body>
+
+</html>
