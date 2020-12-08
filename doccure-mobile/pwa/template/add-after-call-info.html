@@ -46,6 +46,12 @@
     <!-- Main CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <style>
+        li {
+            background-color: transparent !important;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -65,7 +71,7 @@
                             <h2 id="name" style="font-weight: bold;">Medical Record</h2>
                         </div>
                     </div>
-                    <ul class="change-list">
+                    <ul class="change-list" id="medical_record">
                         <li class="item-content item-input">
                             <div class="item-col">
                                 <div class="item-input-wrap ">
@@ -88,10 +94,67 @@
                         </li>
                         <li class="item-content item-input">
                             <div class="item-input-wrap submit-btn-col">
-                                <button id="login-btn" type="button" class="btn btn-submit">Send</button>
+                                <button type="button" class="btn btn-submit">Send</button>
                             </div>
                         </li>
                     </ul>
+                    <div class="tab-pane hidden" id="prescription">
+                        <div class="panel panel-default">
+					    	<div id="collapseFour" class="panel-collapse collapse">
+					      		<div class="panel-body">
+					      			<div class="setting-widget">
+										<div class="awards-experience">				
+                                            <form class="append-col">
+												<ul class="awards-details">
+                                                    <li class="item-content item-input">
+                                                        <hr>
+                                                    </li>
+													<li class="item-content item-input">
+												      	<div class="item-col">
+												        	<div class="item-title item-label">Drug name</div>
+												        	<div class="item-input-wrap">
+												          		<input type="text">
+												        	</div>
+												      	</div>
+                                                    </li>
+												    <li class="item-content item-input col-50 gender">
+                                                        <div class="item-col">
+                                                          <div class="item-title item-label">Dosage</div>
+                                                          <div class="item-input-wrap">
+                                                                <input type="text">
+                                                          </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="item-content item-input col-50 dob">
+                                                        <div class="item-col">
+                                                        <div class="item-title item-label">Days</div>
+                                                        <div class="item-input-wrap">
+                                                                <input type="number">
+                                                        </div>
+                                                        </div>
+                                                    </li>
+												    <li class="item-content item-input">
+												      	<div class="item-col">
+												        	<div class="item-title item-label">Directives</div>
+												        	<div class="item-input-wrap">
+												          		<input type="text">
+												        	</div>
+												      	</div>
+												    </li>
+												</ul>
+											</form>
+                                            <span class="add-btn"></span>
+                                            <li class="item-content item-input">
+                                                <div class="item-input-wrap submit-btn-col">
+                                                    <button type="button" class="btn btn-submit">Send</button>
+                                                </div>
+                                            </li>
+										</div>
+							      	</div>
+					      		</div>
+					      	</div>
+					    </div>
+                    </div>
                 </div>
             </div>
         </div>

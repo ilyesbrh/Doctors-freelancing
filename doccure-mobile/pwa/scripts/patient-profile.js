@@ -92,6 +92,21 @@ function getMedicalRecordsHTML(e, i) {
 }
 
 function getPrescriptionHTML(e, i) {
+    let prescription = '';
+
+    e.drugs.forEach((drug, i) => {
+
+        prescription += `
+        <h3 style="margin: 10px 0;">Medicament ${i+1}</h3>
+        <p id="modal-content">Name: ${drug.name}</p>
+        <p id="modal-content">Dosage: ${drug.dosage}</p>
+        <p id="modal-content">for ${drug.days} days</p>
+        <p id="modal-content">Directives: ${drug.directives}</p>
+        `
+
+    });
+
+
     return `<div class="patient-widget">
                 <div class="patient-top-details">
                     <div>
@@ -104,7 +119,7 @@ function getPrescriptionHTML(e, i) {
                 <div class="invoice-widget">
                     <div class="pat-info-left">
                         <div class="pat-info-cont">
-                            <h4 class="pat-name"><a> ${e.doctor_name}</a></h4>
+                            <h4 class="pat-name"><a> ${e.patient_name}</a></h4>
                             <div class="patient-details-col">
                                 <span class="">${e.doctor_specialty}</span>
                             </div>
@@ -119,8 +134,7 @@ function getPrescriptionHTML(e, i) {
                         <!-- Modal content -->
                         <div class="modal-content">
                             <span class="close">&times;</span>
-                            <h3 style="margin: 10px 0;">Prescription</h3>
-                            <p id="modal-content">${e.prescription}</p>
+                            ${prescription}
                         </div>
 
                     </div>

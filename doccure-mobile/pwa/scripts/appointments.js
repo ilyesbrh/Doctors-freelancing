@@ -7,7 +7,7 @@ var user;
 
 jQuery(document).ready(async () => {
 
-    $(".patient-appointments-col").append('<div id="loader"><div/>')
+    $("#upcoming").append('<div id="loader"><div/>')
 
     user = (await auth.getUser()).data;
 
@@ -18,17 +18,15 @@ jQuery(document).ready(async () => {
     $("#loader").remove();
 
     appointments.data.forEach((e, i) => {
-
-        $(".patient-appointments-col").append(getAllBookingsHTML(e))
+        if(moment().isAfter(e.to_time)) $("#old").append(getOldBookingsHTML(e))
+        else $("#upcoming").append(getUpcomingBookingsHTML(e))
 
     });
 
 });
 
-function getAllBookingsHTML(e) {
-    let button = `<div class="status-btn">
-                    <a class="btn print"><i><img src="assets/images/icon-time.svg" alt=""></i>Not ready yet</a>
-                </div>`
+function getUpcomingBookingsHTML(e) {
+    let button = ''
 
     if (moment().isAfter(e.from_time)) {
         button = `<div class="status-btn">
@@ -36,14 +34,48 @@ function getAllBookingsHTML(e) {
                 </div>`
     }
 
-    if (moment().isAfter(e.to_time) && user.role === 'doctor') {
+    let profile = `<h4 class="pat-name">Doctor <a href="doctor-profile.html?id=${e.doctor_id}">${e.doctor_name}</a></h4>`
+
+    if (user.role === 'doctor') {
+        profile = `<h4 class="pat-name">Patient <a href="patient-profile.html?id=${e.patient_id}">${e.patient_name}</a></h4>`
+    }
+
+    return `<div class="patient-widget">
+                <div class="patient-top-details">
+                    <div>
+                        <span class="invoice-id"><strong>Booking Date</strong> - ${moment(e.created_time).format('DD MMM YYYY')}</span>
+                    </div>
+                    <div>
+                        <span class="date-col">${e.doctor_specialty}</span>
+                    </div>
+                </div>
+                <div class="invoice-widget">
+                    <div class="pat-info-left">
+                        <div class="pat-info-cont">
+                        ${profile}
+                            <div class="patient-details-col">
+                            <span class="">Appt Date - ${moment(e.from_time).format('MMMM Do YYYY, h:mm a')}</span>
+                        </div>
+                        <div class="patient-details-col">
+                            <span class="">Start ${moment(e.from_time).from(moment())}</span>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+                    <div class="status-col">
+                        ${button}
+                    </div>
+                </div>
+            </div>`;
+}
+
+function getOldBookingsHTML(e) {
+    let button = ''
+
+    if (user.role === 'doctor') {
         button = `<div class="status-btn">
                     <a href="add-after-call-info.html?id=${e.id}" class="btn success"><i><img src="assets/images/map-doctor.svg" alt=""></i>Add Prescription</a>
                 </div>`
-    } 
-    
-    if (moment().isAfter(e.to_time) && user.role === 'patient') {
-        button = ''
     } 
 
     let profile = `<h4 class="pat-name">Doctor <a href="doctor-profile.html?id=${e.doctor_id}">${e.doctor_name}</a></h4>`

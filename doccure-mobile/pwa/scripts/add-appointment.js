@@ -17,11 +17,14 @@ jQuery(document).ready(async function () {
     name = me.name
 
     $('#name').text(name);
+    $('#question').text(me.question);
+
+    jQuery.datetimepicker.setLocale('fr');
 
     jQuery('#date').datetimepicker(
         {
-            minDate: moment().toDate(),//yesterday is minimum date(for today use 0 or -1970/01/01)
-            maxDate: moment().add(7, 'days').toDate(),//tomorrow is maximum date calendar
+            minDate: moment().toDate(),
+            maxDate: moment().add(20, 'days').toDate(),
             format: 'm-d-Y H:i'
         }
     );

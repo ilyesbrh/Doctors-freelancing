@@ -50,6 +50,8 @@ jQuery(document).ready(async () => {
             video: true,
         });
 
+        // rtc.localStream.setVideoProfile('1080p_5')
+
         // Initialize the local stream
         rtc.localStream.init(() => {
             // Play the local stream

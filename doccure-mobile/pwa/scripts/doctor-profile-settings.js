@@ -16,6 +16,7 @@ jQuery(document).ready(async () => {
     $('#specialty').val(me.specialty);
     $('#birthday').val(me.birthday);
 
+    $('#question').val(me.question);
     $('#bio').val(me.bio);
 
     $('#address_line1').val(me.address_line1);
